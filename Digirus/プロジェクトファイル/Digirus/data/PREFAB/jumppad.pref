@@ -1,0 +1,124 @@
+{
+    "data-field": [
+        {
+            "name": "Power",
+            "type": "float",
+            "value": 180.0
+        }
+    ],
+    "object": {
+        "0": {
+            "friction": 1.0,
+            "model": "data\\MODEL\\jumppad.x",
+            "name": "model",
+            "shadow": true,
+            "tag": "",
+            "transform": {
+                "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    2.799999952316284,
+                    0.5,
+                    2.799999952316284
+                ]
+            },
+            "trigger": false
+        },
+        "1": {
+            "collision": [
+                {
+                    "offset": [
+                        0.0,
+                        2.200000047683716,
+                        0.0
+                    ],
+                    "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "size": [
+                        28.0,
+                        2.9000000953674316,
+                        28.0
+                    ],
+                    "type": "box"
+                }
+            ],
+            "friction": 1.0,
+            "model": "none",
+            "name": "JumpCollision",
+            "tag": "",
+            "transform": {
+                "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "trigger": true
+        }
+    },
+    "parent": {
+        "0": -1,
+        "1": -1
+    },
+    "prefab": {
+        "collision": [
+            {
+                "offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "size": [
+                    28.0,
+                    2.0,
+                    28.0
+                ],
+                "type": "box"
+            }
+        ],
+        "friction": 50.0,
+        "mass": 10.0,
+        "name": "Prefab",
+        "rigidbody": false,
+        "tag": "",
+        "transform": {
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "trigger": false
+    }
+}

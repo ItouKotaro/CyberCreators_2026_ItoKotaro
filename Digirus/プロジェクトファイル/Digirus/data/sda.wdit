@@ -1,0 +1,78 @@
+{
+    "pallet": [
+        {
+            "name": "test",
+            "path": "data\\PREFAB\\display.pref"
+        }
+    ],
+    "prefab-objects": {
+        "data\\PREFAB\\display.pref": [
+            {
+                "data-field": [
+                    {
+                        "name": "move_tp",
+                        "type": "int",
+                        "value": 5
+                    },
+                    {
+                        "name": "dwad",
+                        "type": "string",
+                        "value": "hello!"
+                    }
+                ],
+                "name": "DisplayPortal",
+                "tag": "Portal",
+                "transform": {
+                    "position": [
+                        -5.544106483459473,
+                        8.315144538879395,
+                        -12.557002067565918
+                    ],
+                    "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            {
+                "data-field": [
+                    {
+                        "name": "move_tp",
+                        "type": "int",
+                        "value": 108
+                    },
+                    {
+                        "name": "dwad",
+                        "type": "string",
+                        "value": "what"
+                    }
+                ],
+                "name": "DisplayPortal",
+                "tag": "Portal",
+                "transform": {
+                    "position": [
+                        59.38022994995117,
+                        7.08193826675415,
+                        -23.986431121826172
+                    ],
+                    "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                }
+            }
+        ]
+    }
+}
