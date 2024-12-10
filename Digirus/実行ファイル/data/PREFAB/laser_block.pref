@@ -1,0 +1,123 @@
+{
+    "data-field": [
+        {
+            "name": "Length",
+            "type": "float",
+            "value": 30.0
+        },
+        {
+            "name": "Move",
+            "type": "vector3",
+            "value": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "name": "MoveCounter",
+            "type": "int",
+            "value": 0
+        },
+        {
+            "name": "Damage",
+            "type": "int",
+            "value": 1
+        }
+    ],
+    "object": {
+        "0": {
+            "collision": [
+                {
+                    "offset": [
+                        0.0,
+                        0.0,
+                        3.5
+                    ],
+                    "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "size": [
+                        7.300000190734863,
+                        7.300000190734863,
+                        7.5
+                    ],
+                    "type": "box"
+                }
+            ],
+            "friction": 1.0,
+            "model": "data\\MODEL\\laser_block.x",
+            "name": "model",
+            "shadow": true,
+            "tag": "",
+            "transform": {
+                "position": [
+                    0.0,
+                    0.0,
+                    -4.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "trigger": false
+        },
+        "1": {
+            "friction": 1.0,
+            "model": "data\\MODEL\\laser_bar.x",
+            "name": "bar",
+            "shadow": true,
+            "tag": "",
+            "transform": {
+                "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    2.0,
+                    2.0,
+                    0.0
+                ]
+            },
+            "trigger": false
+        }
+    },
+    "parent": {
+        "0": -1,
+        "1": -1
+    },
+    "prefab": {
+        "friction": 1.0,
+        "mass": 10.0,
+        "name": "LaserBlock",
+        "tag": "SP",
+        "transform": {
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "trigger": false
+    }
+}
