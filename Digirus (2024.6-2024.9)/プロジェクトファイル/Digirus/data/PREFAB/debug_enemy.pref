@@ -1,0 +1,101 @@
+{
+    "object": {
+        "0": {
+            "model": "data\\MODEL\\enemy_debug.x",
+            "name": "model",
+            "tag": "",
+            "transform": {
+                "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "trigger": false
+        },
+        "1": {
+            "collision": [
+                {
+                    "offset": [
+                        0.0,
+                        0.0,
+                        -30.700000762939453
+                    ],
+                    "size": [
+                        53.70000076293945,
+                        15.0,
+                        60.599998474121094
+                    ],
+                    "type": "box"
+                }
+            ],
+            "model": "none",
+            "name": "Search",
+            "tag": "",
+            "transform": {
+                "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "trigger": true
+        }
+    },
+    "parent": {
+        "0": -1,
+        "1": -1
+    },
+    "prefab": {
+        "collision": [
+            {
+                "height": 8.300000190734863,
+                "offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "radius": 4.0,
+                "type": "capsule"
+            }
+        ],
+        "friction": 1.0,
+        "mass": 40.0,
+        "name": "DebugEnemy",
+        "rigidbody": true,
+        "tag": "Enemy",
+        "transform": {
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "trigger": false
+    }
+}

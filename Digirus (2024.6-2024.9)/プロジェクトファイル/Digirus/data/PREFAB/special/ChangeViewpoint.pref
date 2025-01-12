@@ -1,0 +1,53 @@
+{
+    "data-field": [
+        {
+            "name": "ChangedPos",
+            "type": "vector3",
+            "value": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    ],
+    "prefab": {
+        "collision": [
+            {
+                "offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "size": [
+                    20.0,
+                    20.0,
+                    20.0
+                ],
+                "type": "box"
+            }
+        ],
+        "friction": 1.0,
+        "mass": 10.0,
+        "name": "ChangeViewpoint",
+        "rigidbody": false,
+        "tag": "Special",
+        "transform": {
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "trigger": true
+    }
+}

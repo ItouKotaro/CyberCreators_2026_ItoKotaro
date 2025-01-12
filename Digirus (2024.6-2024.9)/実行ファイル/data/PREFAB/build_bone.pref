@@ -1,0 +1,72 @@
+{
+    "object": {
+        "0": {
+            "friction": 1.0,
+            "model": "data\\MODEL\\build_bone.x",
+            "name": "model",
+            "shadow": true,
+            "tag": "",
+            "transform": {
+                "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "trigger": false
+        }
+    },
+    "parent": {
+        "0": -1
+    },
+    "prefab": {
+        "collision": [
+            {
+                "offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "size": [
+                    11.0,
+                    7.800000190734863,
+                    50.5
+                ],
+                "type": "box"
+            }
+        ],
+        "friction": 1.0,
+        "mass": 500.0,
+        "name": "Prefab",
+        "rigidbody": true,
+        "tag": "",
+        "transform": {
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "trigger": false
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "data-field": [
+        {
+            "name": "TexturePath",
+            "type": "string",
+            "value": "data\\TEXTURE\\"
+        }
+    ],
+    "prefab": {
+        "collision": [
+            {
+                "offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "size": [
+                    10.0,
+                    10.0,
+                    10.0
+                ],
+                "type": "box"
+            }
+        ],
+        "friction": 1.0,
+        "mass": 10.0,
+        "name": "Billboard",
+        "rigidbody": false,
+        "tag": "tutorial",
+        "transform": {
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "trigger": true
+    }
+}

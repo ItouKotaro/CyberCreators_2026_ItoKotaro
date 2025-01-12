@@ -1,0 +1,51 @@
+{
+    "object": {
+        "0": {
+            "friction": 1.0,
+            "model": "data\\MODEL\\computer_display.x",
+            "name": "model",
+            "shadow": true,
+            "tag": "",
+            "transform": {
+                "position": [
+                    0.0,
+                    -20.899999618530273,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "trigger": false
+        }
+    },
+    "parent": {
+        "0": -1
+    },
+    "prefab": {
+        "friction": 1.0,
+        "mass": 10.0,
+        "name": "ComputerDisplay",
+        "tag": "",
+        "transform": {
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "trigger": false
+    }
+}

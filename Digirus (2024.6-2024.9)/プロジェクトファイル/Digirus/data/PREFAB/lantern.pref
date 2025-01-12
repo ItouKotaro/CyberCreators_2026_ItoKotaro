@@ -1,0 +1,106 @@
+{
+    "object": {
+        "0": {
+            "friction": 1.0,
+            "model": "data\\MODEL\\lantern0.x",
+            "name": "model",
+            "shadow": true,
+            "tag": "",
+            "transform": {
+                "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    2.0,
+                    2.0,
+                    2.0
+                ]
+            },
+            "trigger": false
+        },
+        "1": {
+            "friction": 1.0,
+            "light": {
+                "color": [
+                    1.0,
+                    0.4941176474094391,
+                    0.0,
+                    1.0
+                ],
+                "intensity": 150.0
+            },
+            "model": "none",
+            "name": "Light",
+            "tag": "",
+            "transform": {
+                "position": [
+                    0.0,
+                    6.400000095367432,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "trigger": false
+        }
+    },
+    "parent": {
+        "0": -1,
+        "1": -1
+    },
+    "prefab": {
+        "collision": [
+            {
+                "offset": [
+                    0.0,
+                    5.900000095367432,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "size": [
+                    4.599999904632568,
+                    11.600000381469727,
+                    4.599999904632568
+                ],
+                "type": "box"
+            }
+        ],
+        "friction": 1.0,
+        "mass": 2.0,
+        "name": "lantern",
+        "rigidbody": true,
+        "tag": "",
+        "transform": {
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "trigger": false
+    }
+}

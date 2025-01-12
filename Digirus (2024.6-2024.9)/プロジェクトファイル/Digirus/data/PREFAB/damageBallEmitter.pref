@@ -1,0 +1,64 @@
+{
+    "data-field": [
+        {
+            "name": "Life",
+            "type": "int",
+            "value": 360
+        },
+        {
+            "name": "Interval",
+            "type": "int",
+            "value": 60
+        },
+        {
+            "name": "BetweenRand",
+            "type": "int",
+            "value": 20
+        },
+        {
+            "name": "Length",
+            "type": "int",
+            "value": 60
+        }
+    ],
+    "prefab": {
+        "collision": [
+            {
+                "offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "size": [
+                    47.5,
+                    10.0,
+                    10.0
+                ],
+                "type": "box"
+            }
+        ],
+        "friction": 1.0,
+        "mass": 10.0,
+        "name": "DamageBallEmitter",
+        "rigidbody": false,
+        "tag": "",
+        "transform": {
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "trigger": true
+    }
+}

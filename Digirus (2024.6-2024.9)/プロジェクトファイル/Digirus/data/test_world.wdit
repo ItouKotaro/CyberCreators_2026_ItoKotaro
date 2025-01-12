@@ -1,0 +1,159 @@
+{
+    "light-objects": [
+        {
+            "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "intensity": 188.5,
+            "name": "Light",
+            "tag": "",
+            "transform": {
+                "position": [
+                    2.991485118865967,
+                    11.822702407836914,
+                    18.996999740600586
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            }
+        }
+    ],
+    "pallet": [
+        {
+            "name": "bench",
+            "path": "data\\bench.pref"
+        },
+        {
+            "name": "BlueFloor",
+            "path": "data\\bluefloor.pref"
+        },
+        {
+            "name": "Virus Light",
+            "path": "data\\virus_light.pref"
+        }
+    ],
+    "prefab-objects": {
+        "data\\bench.pref": [
+            {
+                "name": "bench",
+                "tag": "Prop",
+                "transform": {
+                    "position": [
+                        -25.14900016784668,
+                        -0.6340000033378601,
+                        7.177000045776367
+                    ],
+                    "rotation": [
+                        0.0,
+                        -2.799999952316284,
+                        0.0
+                    ],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            {
+                "name": "bench",
+                "tag": "Prop",
+                "transform": {
+                    "position": [
+                        -1.565000057220459,
+                        6.572000026702881,
+                        -17.92300033569336
+                    ],
+                    "rotation": [
+                        0.5,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            {
+                "name": "bench",
+                "tag": "Prop",
+                "transform": {
+                    "position": [
+                        24.66200065612793,
+                        31.517000198364258,
+                        20.85300064086914
+                    ],
+                    "rotation": [
+                        1.100000023841858,
+                        0.0,
+                        -0.4000000059604645
+                    ],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                }
+            }
+        ],
+        "data\\bluefloor.pref": [
+            {
+                "name": "bluefloor",
+                "tag": "",
+                "transform": {
+                    "position": [
+                        1.246317982673645,
+                        -3.7880001068115234,
+                        -2.359999895095825
+                    ],
+                    "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                }
+            }
+        ],
+        "data\\virus_light.pref": [
+            {
+                "name": "virus",
+                "tag": "virus",
+                "transform": {
+                    "position": [
+                        -24.57900047302246,
+                        10.612000465393066,
+                        -11.845999717712402
+                    ],
+                    "rotation": [
+                        -2.882999897003174,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                }
+            }
+        ]
+    }
+}

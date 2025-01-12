@@ -1,0 +1,7 @@
+{
+	"time": 120,
+	"skybox": "data\\SKYBOX\\daylight.json",
+	"ambient": 0.8,
+	"bgm": "data\\SOUND\\BGM\\stage00.wav",
+	"volume": 0.5
+}

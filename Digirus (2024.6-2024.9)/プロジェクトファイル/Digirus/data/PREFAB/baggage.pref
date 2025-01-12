@@ -1,0 +1,72 @@
+{
+    "object": {
+        "0": {
+            "friction": 1.0,
+            "model": "data\\MODEL\\baggage.x",
+            "name": "model",
+            "shadow": true,
+            "tag": "",
+            "transform": {
+                "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "trigger": false
+        }
+    },
+    "parent": {
+        "0": -1
+    },
+    "prefab": {
+        "collision": [
+            {
+                "offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "size": [
+                    14.199999809265137,
+                    14.0,
+                    14.100000381469727
+                ],
+                "type": "box"
+            }
+        ],
+        "friction": 1.0,
+        "mass": 3.0,
+        "name": "Prefab",
+        "rigidbody": true,
+        "tag": "",
+        "transform": {
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "trigger": false
+    }
+}

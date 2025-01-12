@@ -1,0 +1,349 @@
+{
+    "motion": {
+        "move": {
+            "1": {
+                "keys": {
+                    "0": {
+                        "position": [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ],
+                        "rotation": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    "30": {
+                        "position": [
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "rotation": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    }
+                }
+            },
+            "2": {
+                "keys": {
+                    "0": {
+                        "position": [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ],
+                        "rotation": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    "34": {
+                        "position": [
+                            0.0,
+                            0.0,
+                            1.5
+                        ],
+                        "rotation": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    "4": {
+                        "position": [
+                            0.0,
+                            0.0,
+                            -1.5
+                        ],
+                        "rotation": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    }
+                }
+            },
+            "3": {
+                "keys": {
+                    "0": {
+                        "position": [
+                            0.0,
+                            0.0,
+                            -0.4000000059604645
+                        ],
+                        "rotation": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    "36": {
+                        "position": [
+                            0.0,
+                            0.0,
+                            1.5
+                        ],
+                        "rotation": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    },
+                    "6": {
+                        "position": [
+                            0.0,
+                            0.0,
+                            -1.5
+                        ],
+                        "rotation": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    }
+                }
+            },
+            "loop": true,
+            "max_frame": 60
+        }
+    },
+    "object": {
+        "0": {
+            "friction": 1.0,
+            "model": "data\\MODEL\\MUSHI\\head.x",
+            "name": "head",
+            "shadow": true,
+            "tag": "",
+            "transform": {
+                "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    0.30000001192092896,
+                    0.30000001192092896,
+                    0.30000001192092896
+                ]
+            },
+            "trigger": false
+        },
+        "1": {
+            "friction": 1.0,
+            "model": "data\\MODEL\\MUSHI\\tail0.x",
+            "name": "tail0",
+            "shadow": true,
+            "tag": "",
+            "transform": {
+                "position": [
+                    -7.900000095367432,
+                    -1.5,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "trigger": false
+        },
+        "2": {
+            "friction": 1.0,
+            "model": "data\\MODEL\\MUSHI\\tail1.x",
+            "name": "tail1",
+            "shadow": true,
+            "tag": "",
+            "transform": {
+                "position": [
+                    -3.0999999046325684,
+                    -0.4000000059604645,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "trigger": false
+        },
+        "3": {
+            "friction": 1.0,
+            "model": "data\\MODEL\\MUSHI\\tail2.x",
+            "name": "tail2",
+            "shadow": true,
+            "tag": "",
+            "transform": {
+                "position": [
+                    -2.4000000953674316,
+                    -0.8999999761581421,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "trigger": false
+        },
+        "4": {
+            "collision": [
+                {
+                    "offset": [
+                        -1.2000000476837158,
+                        0.0,
+                        0.0
+                    ],
+                    "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "size": [
+                        7.099999904632568,
+                        3.9000000953674316,
+                        4.099999904632568
+                    ],
+                    "type": "box"
+                }
+            ],
+            "friction": 1.0,
+            "model": "none",
+            "name": "Detection",
+            "tag": "",
+            "transform": {
+                "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "trigger": true
+        }
+    },
+    "parent": {
+        "0": -1,
+        "1": 0,
+        "2": 1,
+        "3": 2,
+        "4": -1
+    },
+    "prefab": {
+        "collision": [
+            {
+                "offset": [
+                    -1.2000000476837158,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "size": [
+                    6.0,
+                    3.0,
+                    3.0
+                ],
+                "type": "box"
+            }
+        ],
+        "friction": 0.4000000059604645,
+        "mass": 7.0,
+        "name": "Prefab",
+        "rigidbody": true,
+        "tag": "",
+        "transform": {
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                -1.565000057220459,
+                0.0
+            ]
+        },
+        "trigger": false
+    }
+}

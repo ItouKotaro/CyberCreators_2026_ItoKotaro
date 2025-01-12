@@ -1,0 +1,64 @@
+{
+    "object": {
+        "0": {
+            "model": "data\\MODEL\\virus.x",
+            "name": "test",
+            "tag": "",
+            "transform": {
+                "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "trigger": false
+        }
+    },
+    "parent": {
+        "0": -1
+    },
+    "prefab": {
+        "collision": [
+            {
+                "offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "radius": 7.900000095367432,
+                "type": "sphere"
+            }
+        ],
+        "name": "Prefab",
+        "rigidbody": false,
+        "tag": "",
+        "transform": {
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                3.0,
+                3.0,
+                3.0
+            ]
+        },
+        "trigger": false
+    }
+}

@@ -1,0 +1,88 @@
+{
+    "data-field": [
+        {
+            "name": "Move",
+            "type": "vector3",
+            "value": [
+                0.4000000059604645,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "name": "MoveCounter",
+            "type": "int",
+            "value": 60
+        }
+    ],
+    "object": {
+        "0": {
+            "friction": 1.0,
+            "model": "data\\MODEL\\move_tile.x",
+            "name": "model",
+            "shadow": true,
+            "tag": "",
+            "transform": {
+                "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.5,
+                    1.5,
+                    1.5
+                ]
+            },
+            "trigger": false
+        }
+    },
+    "parent": {
+        "0": -1
+    },
+    "prefab": {
+        "collision": [
+            {
+                "offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "size": [
+                    25.0,
+                    3.299999952316284,
+                    25.0
+                ],
+                "type": "box"
+            }
+        ],
+        "friction": 17.0,
+        "mass": 10.0,
+        "name": "MoveTile",
+        "rigidbody": false,
+        "tag": "",
+        "transform": {
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "trigger": false
+    }
+}

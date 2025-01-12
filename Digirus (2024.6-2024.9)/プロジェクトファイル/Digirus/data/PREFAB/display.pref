@@ -1,0 +1,112 @@
+{
+    "data-field": [
+        {
+            "name": "MovePos",
+            "type": "vector3",
+            "value": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "name": "IsGoal",
+            "type": "bool",
+            "value": false
+        }
+    ],
+    "object": {
+        "0": {
+            "friction": 1.0,
+            "model": "data\\MODEL\\display.x",
+            "name": "model",
+            "shadow": true,
+            "tag": "",
+            "transform": {
+                "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    0.5,
+                    0.5,
+                    0.5
+                ]
+            },
+            "trigger": false
+        },
+        "1": {
+            "collision": [
+                {
+                    "offset": [
+                        0.0,
+                        0.0,
+                        -5.699999809265137
+                    ],
+                    "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "size": [
+                        34.400001525878906,
+                        21.899999618530273,
+                        8.300000190734863
+                    ],
+                    "type": "box"
+                }
+            ],
+            "friction": 1.0,
+            "model": "none",
+            "name": "Enter",
+            "tag": "",
+            "transform": {
+                "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "trigger": true
+        }
+    },
+    "parent": {
+        "0": -1,
+        "1": -1
+    },
+    "prefab": {
+        "friction": 1.0,
+        "mass": 10.0,
+        "name": "DisplayPortal",
+        "tag": "Portal",
+        "transform": {
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "trigger": false
+    }
+}

@@ -1,0 +1,7 @@
+{
+	"time": 180,
+	"skybox": "data\\SKYBOX\\darknight.json",
+	"ambient": 0.4,
+	"bgm": "data\\SOUND\\BGM\\title.wav",
+	"volume": 0.5
+}
