@@ -1,0 +1,722 @@
+SET_BGM
+type: TITLE_THEME
+
+SET_BG
+type: SKY
+move: RIGHTtoLEFT
+color: 255, 255, 255, 255
+speed1: 0.001
+speed2: 0.002
+speed3: 0.002
+
+# SCENE - 序盤
+
+SUMMON_ENEMY
+type: PLUGUN
+size: 1
+hp: 10
+pos: 640, 640, 130, 130
+bullet_interval: -1
+move: NONE
+- update: 0
+- rot: 0
+- updaterot: FALSE
+
+CONDITION
+type: ALIVE_ENEMY
+alive: 0
+
+DELAY
+time: 60
+
+# END_SCENE
+
+# SCENE - 横並び移動
+
+SUMMON_ENEMY
+type: PLUGUN
+size: 1
+hp: 10
+pos: 640, 640, 130, 130
+bullet_interval: -1
+move: LOOP
+- update: 0
+- toggle: 300
+- pos: 0.7, 0
+- rot: 0
+- updaterot: FALSE
+
+SUMMON_ENEMY
+type: PLUGUN
+size: 1
+hp: 10
+pos: 440, 440, 130, 130
+bullet_interval: -1
+move: LOOP
+- update: 0
+- toggle: 300
+- pos: 0.7, 0
+- rot: 0
+- updaterot: FALSE
+
+SUMMON_ENEMY
+type: PLUGUN
+size: 1
+hp: 10
+pos: 840, 840, 130, 130
+bullet_interval: -1
+move: LOOP
+- update: 0
+- toggle: 300
+- pos: 0.7, 0
+- rot: 0
+- updaterot: FALSE
+
+CONDITION
+type: ALIVE_ENEMY
+alive: 0
+
+# END_SCENE
+
+# SCENE - 報酬タイム
+
+SUMMON_ITEM
+type: BONUS
+pos: 190, 1100, 12, 42
+move: 0, 2.5
+
+DELAY
+time: 15
+
+SUMMON_ITEM
+type: BONUS
+pos: 190, 1100, 12, 42
+move: 0, 2.5
+
+DELAY
+time: 35
+
+SUMMON_ITEM
+type: BONUS
+pos: 190, 1100, 12, 42
+move: 0, 2.5
+
+DELAY
+time: 150
+
+# END_SCENE
+
+# SCENE - 撃ってくる敵
+
+SUMMON_ENEMY
+type: PLUGUN
+size: 1
+hp: 30
+pos: 310, 310, 0, 0
+bullet_interval: 35
+move: NORMAL
+- update: 0
+- pos: 0, 0.4
+- rot: 0
+- updaterot: FALSE
+
+SUMMON_ENEMY
+type: PLUGUN
+size: 1
+hp: 30
+pos: 990, 990, 0, 0
+bullet_interval: 35
+move: NORMAL
+- update: 0
+- pos: 0, 0.4
+- rot: 0
+- updaterot: FALSE
+
+DELAY
+time: 200
+
+SUMMON_ENEMY
+type: PLUGUN
+size: 1
+hp: 30
+pos: 640, 640, 0, 0
+bullet_interval: 35
+move: NORMAL
+- update: 0
+- pos: 0, 0.4
+- rot: 0
+- updaterot: FALSE
+
+DELAY
+time: 300
+
+SUMMON_ITEM
+type: BULLET_3DIRECTION
+pos: 640, 640, 0, 0
+move: 0, 2.5
+
+CONDITION
+type: ALIVE_ENEMY
+alive: 0
+
+# END_SCENE
+
+# SCENE - 敵の並び
+
+SUMMON_ENEMY
+type: PLUGUN
+size: 1
+hp: 60
+pos: 640, 640, 235, 235
+bullet_interval: 28
+move: LOOP
+- update: 0
+- toggle: 150
+- pos: 1.5, 0.0
+- rot: 0
+- updaterot: FALSE
+
+SUMMON_ENEMY
+type: PLUGUN
+size: 1
+hp: 60
+pos: 490, 490, 185, 185
+bullet_interval: 34
+move: LOOP
+- update: 0
+- toggle: 150
+- pos: 1.5, 0.0
+- rot: 0
+- updaterot: FALSE
+
+SUMMON_ENEMY
+type: PLUGUN
+size: 1
+hp: 60
+pos: 786, 786, 185, 185
+bullet_interval: 34
+move: LOOP
+- update: 0
+- toggle: 150
+- pos: 1.5, 0.0
+- rot: 0
+- updaterot: FALSE
+
+SUMMON_ENEMY
+type: PLUGUN
+size: 1
+hp: 60
+pos: 345, 345, 131, 131
+bullet_interval: 35
+move: LOOP
+- update: 0
+- toggle: 150
+- pos: 1.5, 0
+- rot: 0
+- updaterot: FALSE
+
+SUMMON_ENEMY
+type: PLUGUN
+size: 1
+hp: 60
+pos: 932, 932, 131, 131
+bullet_interval: 35
+move: LOOP
+- update: 0
+- toggle: 150
+- pos: 1.5, 0
+- rot: 0
+- updaterot: FALSE
+
+CONDITION
+type: ALIVE_ENEMY
+alive: 0
+
+# END_SCENE
+
+# SCENE - 敵斜め
+
+DELAY
+time: 50
+
+SUMMON_ITEM
+type: HEAL
+pos: 640, 640, 0, 0
+move: 0, 2.4
+
+DELAY
+time: 100
+
+SUMMON_ENEMY
+type: LOOKLE
+size: 1
+hp: 120
+pos: 42, 42, 0, 0
+bullet_interval: 32
+move: NORMAL
+- update: 0
+- pos: 1.2, 0.3
+- rot: 0
+- updaterot: FALSE
+
+SUMMON_ENEMY
+type: LOOKLE
+size: 1
+hp: 120
+pos: 1240, 1240, 0, 0
+bullet_interval: 32
+move: NORMAL
+- update: 0
+- pos: -1.20, 0.3
+- rot: 0
+- updaterot: FALSE
+
+DELAY
+time: 150
+
+SUMMON_ENEMY
+type: PLUGUN
+size: 1.80
+hp: 200
+pos: 640, 640, 84, 84
+bullet_interval: 28
+move: REFLECTION
+- update: 0
+- pos: 2.30, 0
+- rot: 0
+- updaterot: FALSE
+
+CONDITION
+type: NOEXIST_ENEMY
+enemy_type: PLUGUN
+
+# END_SCENE
+
+# SCENE - 第一回ボス戦
+
+SET_BG
+type: NIGHT
+move: TOPtoBOTTOM
+color: 255, 255, 255, 255
+speed1: 0.002
+speed2: 0.002
+speed3: 0.002
+
+CONDITION
+type: ALIVE_ENEMY
+alive: 0
+
+SUMMON_ITEM
+type: BULLET_SPEED
+pos: 640, 640, 0, 0
+move: 0, 2.5
+
+SET_BGM
+type: BOSS00
+
+DELAY
+time: 300
+
+SUMMON_ENEMY
+type: STTON
+size: 2.45
+hp: 800
+pos: 640, 640, 84, 84
+bullet_interval: 28
+move: REFLECTION
+- update: 0
+- pos: 2.60, 0
+- rot: 0
+- updaterot: FALSE
+
+DELAY
+time: 300
+
+SUMMON_ITEM
+type: AMMO
+pos: 960, 960, 16, 16
+move: 0, 3.2
+
+SUMMON_ENEMY
+type: LOOKLE
+size: 1
+hp: 120
+pos: 1280, 1280, 0, 0
+bullet_interval: 20
+move: NORMAL
+- update: 0
+- pos: -2.60, 1.1
+- rot: 0
+- updaterot: FALSE
+
+SUMMON_ENEMY
+type: LOOKLE
+size: 1
+hp: 120
+pos: 0, 0, 0, 0
+bullet_interval: 20
+move: NORMAL
+- update: 0
+- pos: 2.60, 1.1
+- rot: 0
+- updaterot: FALSE
+
+CONDITION
+type: ALIVE_ENEMY
+alive: 3
+
+SUMMON_ITEM
+type: PORTION_DEFENSE
+pos: 622, 622, 364, 364
+move: 0, 0
+
+DELAY
+time: 800
+
+SUMMON_ENEMY
+type: PLUGUN
+size: 1
+hp: 60
+pos: 310, 310, 74, 74
+bullet_interval: 20
+move: LOOP
+- update: 0
+- toggle: 120
+- pos: -1.80, 0
+- rot: 0
+- updaterot: FALSE
+
+SUMMON_ENEMY
+type: PLUGUN
+size: 1
+hp: 60
+pos: 960, 960, 74, 74
+bullet_interval: 20
+move: LOOP
+- update: 0
+- toggle: 120
+- pos: 1.80, 0
+- rot: 0
+- updaterot: FALSE
+
+CONDITION
+type: NOEXIST_ENEMY
+enemy_type: PLUGUN
+
+SUMMON_ITEM
+type: HEAL
+pos: 0, 0, 360, 360
+move: 2.3, 0
+
+# END_SCENE
+
+# SCENE - 敵襲
+
+SUMMON_ENEMY
+type: PLUGUN
+size: 1.0
+hp: 60
+pos: 234, 234, 30, 30
+bullet_interval: 80
+move: NORMAL
+- update: 0
+- pos: 0, 0.8
+- rot: 0.0
+- updaterot: FALSE
+
+DELAY
+time: 30
+
+SUMMON_ENEMY
+type: BREED
+size: 1.35
+hp: 50
+pos: 1208, 1208, 34, 34
+bullet_interval: 70
+move: NONE
+- update: 0
+- rot: 0.0
+- updaterot: FALSE
+
+DELAY
+time: 40
+
+SUMMON_ENEMY
+type: BREED
+size: 1.35
+hp: 50
+pos: 36, 54, 34, 682
+bullet_interval: 75
+move: NONE
+- update: 0
+- rot: 0.0
+- updaterot: FALSE
+
+DELAY
+time: 80
+
+SUMMON_ENEMY
+type: LOOKLE
+size: 1.70
+hp: 80
+pos: 640, 640, 116, 116
+bullet_interval: 75
+move: LOOP
+- update: 0
+- toggle: 180
+- pos: 1.50, 0.0
+- rot: 0.0
+- updaterot: FALSE
+
+DELAY
+time: 180
+
+CONDITION
+type: ALIVE_ENEMY
+alive: 0
+
+SUMMON_ENEMY
+type: PLUGUN
+size: 1.20
+hp: 60
+pos: 78, 1195, 18, 36
+bullet_interval: 60
+move: NORMAL
+- update: 0
+- pos: 0, 1.0
+- rot: 0.05
+- updaterot: TRUE
+
+SUMMON_ENEMY
+type: PLUGUN
+size: 1.20
+hp: 60
+pos: 78, 1195, 18, 36
+bullet_interval: 75
+move: NORMAL
+- update: 0
+- pos: 0, 1.0
+- rot: 0.05
+- updaterot: TRUE
+
+DELAY
+time: 80
+
+SUMMON_ENEMY
+type: BREED
+size: 1.20
+hp: 60
+pos: 66, 1208, 12, 34
+bullet_interval: 75
+move: NONE
+- update: 0
+- rot: 0.00
+- updaterot: FALSE
+
+CONDITION
+type: ALIVE_ENEMY
+alive: 0
+
+# END_SCENE
+
+# SCENE - 敵の並び
+
+SUMMON_ENEMY
+type: PLUGUN
+size: 2.0
+hp: 200
+pos: 640, 640, 136, 136
+bullet_interval: 60
+move: NONE
+- update: 0
+- rot: 0.08
+- updaterot: TRUE
+
+DELAY
+time: 80
+
+SUMMON_ENEMY
+type: LOOKLE
+size: 1.3
+hp: 60
+pos: 330, 330, 150, 150
+bullet_interval: 75
+move: NONE
+- update: 0
+- rot: 0.00
+- updaterot: FALSE
+
+SUMMON_ENEMY
+type: LOOKLE
+size: 1.3
+hp: 60
+pos: 960, 960, 150, 150
+bullet_interval: 75
+move: NONE
+- update: 0
+- rot: 0.00
+- updaterot: FALSE
+
+DELAY
+time: 250
+
+SUMMON_ENEMY
+type: BREED
+size: 1.4
+hp: 40
+pos: 12, 12, 700, 700
+bullet_interval: 60
+move: NONE
+- update: 0
+- rot: 0.00
+- updaterot: FALSE
+
+SUMMON_ENEMY
+type: BREED
+size: 1.4
+hp: 40
+pos: 1260, 1260, 696, 696
+bullet_interval: 60
+move: NONE
+- update: 0
+- rot: 0.00
+- updaterot: FALSE
+
+CONDITION
+type: ALIVE_ENEMY
+alive: 0
+
+DELAY
+time: 150
+
+# END_SCENE
+
+# SCENE - ボス戦準備
+
+SUMMON_ITEM
+type: AMMO
+pos: 640, 640, 0, 0
+move: 0, 1.4
+
+DELAY
+time: 150
+
+DELAY
+time: 60
+
+SUMMON_ITEM
+type: HEAL
+pos: 164, 1068, 20, 44
+move: 0, 1.6
+
+DELAY
+time: 250
+
+# END_SCENE
+
+# SCENE - 第二回ボス戦
+
+SET_BG
+type: SKY
+move: LEFTtoRIGHT
+color: 255, 0, 255, 255
+speed1: 0.00350
+speed2: 0.00350
+speed3: 0.00350
+
+DELAY
+time: 60
+
+SET_BGM
+type: BATTLE00
+
+DELAY
+time: 80
+
+SUMMON_ENEMY
+type: SIGNA
+size: 3
+hp: 900
+pos: 640, 640, 98, 98
+bullet_interval: 40
+move: REFLECTION
+- update: 0
+- pos: 2.0, 2.0
+- rot: 0.00
+- updaterot: FALSE
+
+# END_SCENE
+
+# SCENE - ボス戦中の襲撃
+
+DELAY
+time: 250
+
+SUMMON_ENEMY
+type: LOOKLE
+size: 1.00
+hp: 30
+pos: 148, 1118, 12, 28
+bullet_interval: 60
+move: NORMAL
+- update: 0
+- pos: 0, 1.00
+- rot: 0.00
+- updaterot: FALSE
+
+SUMMON_ENEMY
+type: LOOKLE
+size: 1.00
+hp: 30
+pos: 148, 1118, 12, 28
+bullet_interval: 75
+move: NORMAL
+- update: 0
+- pos: 0, 0.80
+- rot: 0.00
+- updaterot: FALSE
+
+DELAY
+time: 80
+
+SUMMON_ITEM
+type: BONUS
+pos: 30, 42, 38, 658
+move: 1.2, 0.0
+
+DELAY
+time: 120
+
+SUMMON_ITEM
+type: BONUS
+pos: 1234, 1256, 28, 660
+move: -1.00, 0.0
+
+DELAY
+time: 120
+
+SUMMON_ENEMY
+type: BREED
+size: 1.30
+hp: 40
+pos: 640, 640, 696, 696
+bullet_interval: 62
+move: NONE
+- update: 0
+- rot: 0.00
+- updaterot: FALSE
+
+# END_SCENE
+
+CONDITION
+type: ALIVE_ENEMY
+alive: 0
+
+DELAY
+time: 80
+
+GAME_CLEAR
+
+
+[RANKING_DATA]
+fa20000000000000000000

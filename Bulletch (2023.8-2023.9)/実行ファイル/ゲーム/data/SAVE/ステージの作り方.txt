@@ -1,0 +1,64 @@
+---------------------------------------------------------
+   敵の召喚方法
+---------------------------------------------------------
+
+SUMMON_ENEMY
+type: 敵の種類(PLUGUN, LOOKLE)
+size: サイズ倍率
+hp: 体力
+pos: X1, X2, Y1, Y2
+bullet_interval: 弾の射出間隔
+move: 移動方法(NONE, NORMAL, LOOP, FOLLOW, REFLECTION)
+- update: 0
+
+
+LOOPのオプション
+- toggle: 切り替えカウント
+
+NORMAL, LOOP, FOLLOW, REFLECTIONのオプション
+- pos: X, Y
+
+
+- rot: 0.8
+- updaterot: TRUE
+
+
+---------------------------------------------------------
+   アイテムの召喚方法
+---------------------------------------------------------
+
+SUMMON_ITEM
+type: アイテムの種類(AMMO, AMMO_HALF, HEAL, BULLET_NORMAL, BULLET_SPEED, BULLET_FOLLOWING, BULLET_BOMB, BULLET_3DIRECTION)
+pos: X1, X2, Y1, Y2
+move: X, Y
+
+
+---------------------------------------------------------
+   遅延方法
+---------------------------------------------------------
+DELAY
+time: 時間（更新毎1経過）
+
+
+---------------------------------------------------------
+   条件追加方法
+---------------------------------------------------------
+CONDITION
+type: 条件内容(ALIVE_ENEMY, NOEXIST_ENEMY)
+
+ALIVE_ENEMYのオプション
+alive: 量
+
+NOEXIST_ENEMYのオプション
+enemy_type: 敵の種類(PLUGUN, LOOKLE)
+
+---------------------------------------------------------
+   背景変更
+---------------------------------------------------------
+SET_BG
+type: 背景のタイプ(MASS, GRID)
+move: 動きのタイプ(NOMOVE, TOPtoBOTTOM, BOTTOMtoTOP, LEFTtoRIGHT, RIGHTtoLEFT, TOPLEFTtoBOTTOMRIGHT, TOPRIGHTtoBOTTOMLEFT, BOTTOMLEFTtoTOPRIGHT, BOTTOMRIGHTtoTOPLEFT)
+color: 255, 255, 255, 255
+speed1: 速度
+speed2: 速度
+speed3: 速度
