@@ -1,0 +1,1133 @@
+#-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+#
+#  World Script File [aaaaaaaa.txt]
+#   + Editing with Worldit
+#
+#-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+SCRIPT
+
+#-----------------------------------------------------------------------------
+# テクスチャ数
+#-----------------------------------------------------------------------------
+NUM_TEXTURE = 7
+
+#-----------------------------------------------------------------------------
+# 読み込むテクスチャファイル名
+#-----------------------------------------------------------------------------
+TEXTURE_FILENAME = data/TEXTURE/sky000.jpg			# [0]
+TEXTURE_FILENAME = data/TEXTURE/mountain000.png			# [1]
+TEXTURE_FILENAME = data/TEXTURE/koke_rock.jpg			# [2]
+TEXTURE_FILENAME = data/TEXTURE/field000.jpg			# [3]
+TEXTURE_FILENAME = data/TEXTURE/river000.jpg			# [4]
+TEXTURE_FILENAME = data/TEXTURE/river000.png			# [5]
+TEXTURE_FILENAME = data/TEXTURE/soil.png			# [6]
+
+
+#-----------------------------------------------------------------------------
+# モデル数
+#-----------------------------------------------------------------------------
+NUM_MODEL = 11
+
+#-----------------------------------------------------------------------------
+# 読み込むモデルファイル名
+#-----------------------------------------------------------------------------
+MODEL_FILENAME = data/MODEL/bridge.x			# [0]
+MODEL_FILENAME = data/MODEL/river_stone.x			# [1]
+MODEL_FILENAME = data/MODEL/stone1.x			# [2]
+MODEL_FILENAME = data/MODEL/stone2.x			# [3]
+MODEL_FILENAME = data/MODEL/wall_tree.x			# [4]
+MODEL_FILENAME = data/MODEL/tree.x			# [5]
+MODEL_FILENAME = data/MODEL/tree_2.x			# [6]
+MODEL_FILENAME = data/MODEL/tree_small.x			# [7]
+MODEL_FILENAME = data/MODEL/fence.x			# [8]
+MODEL_FILENAME = data/MODEL/stone_cycle.x			# [9]
+MODEL_FILENAME = data/MODEL/grass.x			# [10]
+
+
+#-----------------------------------------------------------------------------
+# 地面の配置情報
+#-----------------------------------------------------------------------------
+
+#------------------------------------
+#  [field000.jpg]
+#------------------------------------
+FIELDSET
+	TEXTYPE = 3
+	POS = -510 10 0
+	ROT = 0 0 0
+	BLOCK = 10 16
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 3
+	POS = 353 10 0
+	ROT = 0 0 0
+	BLOCK = 10 16
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 3
+	POS = -85 -200 0
+	ROT = 0 0 0
+	BLOCK = 12 16
+	SIZE = 40 40
+END_FIELDSET
+
+#------------------------------------
+#  [river000.jpg]
+#------------------------------------
+FIELDSET
+	TEXTYPE = 4
+	POS = -70 -196 0
+	ROT = 0 0 0
+	BLOCK = 6 20
+	SIZE = 40 40
+	MOVE = 0.000000 -0.010000
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 4
+	POS = -500 12 -175
+	ROT = 0 0 0
+	BLOCK = 5 5
+	SIZE = 38 38
+	MOVE = 0.000000 -0.001000
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 4
+	POS = -610 12 -160
+	ROT = 0 0 0
+	BLOCK = 1 3
+	SIZE = 40 40
+	MOVE = 0.000000 -0.001000
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 4
+	POS = -615 12 -90
+	ROT = 0 0 0
+	BLOCK = 2 1
+	SIZE = 20 20
+	MOVE = 0.000000 -0.001000
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 4
+	POS = -640 12 -145
+	ROT = 0 0 0
+	BLOCK = 1 4
+	SIZE = 25 25
+	MOVE = 0.000000 -0.001000
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 4
+	POS = -595 12 -242
+	ROT = 0 0 0
+	BLOCK = 1 2
+	SIZE = 25 25
+	MOVE = 0.000000 -0.001000
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 4
+	POS = -505 12 -280
+	ROT = 0 0 0
+	BLOCK = 5 1
+	SIZE = 25 25
+	MOVE = 0.000000 -0.001000
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 4
+	POS = -412 12 -180
+	ROT = 0 0 0
+	BLOCK = 1 3
+	SIZE = 25 25
+	MOVE = 0.000000 -0.001000
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 4
+	POS = -520 12 -70
+	ROT = 0 0 0
+	BLOCK = 6 1
+	SIZE = 25 25
+	MOVE = 0.000000 -0.001000
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 4
+	POS = -540 12 -50
+	ROT = 0 0 0
+	BLOCK = 1 1
+	SIZE = 25 25
+	MOVE = 0.000000 -0.001000
+END_FIELDSET
+
+#------------------------------------
+#  [river000.png]
+#------------------------------------
+FIELDSET
+	TEXTYPE = 5
+	POS = -70 -195 0
+	ROT = 0 0 0
+	BLOCK = 6 20
+	SIZE = 40 40
+	MOVE = 0.004000 -0.008000
+END_FIELDSET
+
+#------------------------------------
+#  [soil.png]
+#------------------------------------
+FIELDSET
+	TEXTYPE = 6
+	POS = -360 10 60
+	ROT = 0 0 0
+	BLOCK = 2 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = -348 10 70
+	ROT = 0 0 0
+	BLOCK = 2 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = -390 10 70
+	ROT = 0 0 0
+	BLOCK = 2 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = -410 10 70
+	ROT = 0 40 0
+	BLOCK = 2 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = -410 10 85
+	ROT = 0 40 0
+	BLOCK = 2 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = -430 10 100
+	ROT = 0 45 0
+	BLOCK = 2 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = -420 10 85
+	ROT = 0 45 0
+	BLOCK = 2 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = -450 10 120
+	ROT = 0 43 0
+	BLOCK = 2 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = -460 10 135
+	ROT = 0 43 0
+	BLOCK = 2 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = -465 10 120
+	ROT = 0 43 0
+	BLOCK = 2 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = -490 10 150
+	ROT = 0 30 0
+	BLOCK = 2 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = -530 10 170
+	ROT = 0 15 0
+	BLOCK = 2 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = -540 10 160
+	ROT = 0 15 0
+	BLOCK = 2 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = -550 10 170
+	ROT = 0 5 0
+	BLOCK = 2 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = -495 10 160
+	ROT = 0 5 0
+	BLOCK = 1 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = -542 10 155
+	ROT = 0 5 0
+	BLOCK = 2 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = -580 10 170
+	ROT = 0 0 0
+	BLOCK = 2 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = -620 10 170
+	ROT = 0 0 0
+	BLOCK = 4 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = -605 10 155
+	ROT = 0 0 0
+	BLOCK = 4 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = -600 10 165
+	ROT = 0 0 0
+	BLOCK = 4 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = -680 10 155
+	ROT = 0 0 0
+	BLOCK = 2 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = -585 10 155
+	ROT = 0 0 0
+	BLOCK = 4 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = 270 10 60
+	ROT = 0 0 0
+	BLOCK = 6 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = 270 10 54
+	ROT = 0 0 0
+	BLOCK = 6 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = 260 10 50
+	ROT = 0 -1 0
+	BLOCK = 5 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = 267 10 65
+	ROT = 0 -2 0
+	BLOCK = 5 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = 430 10 50
+	ROT = 0 15 0
+	BLOCK = 3 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = 445 10 40
+	ROT = 0 15 0
+	BLOCK = 3 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = 450 10 32
+	ROT = 0 15 0
+	BLOCK = 3 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = 498 10 20
+	ROT = 0 15 0
+	BLOCK = 3 1
+	SIZE = 40 40
+END_FIELDSET
+FIELDSET
+	TEXTYPE = 6
+	POS = 480 10 30
+	ROT = 0 15 0
+	BLOCK = 3 1
+	SIZE = 40 40
+END_FIELDSET
+
+
+#-----------------------------------------------------------------------------
+# 壁の配置情報
+#-----------------------------------------------------------------------------
+
+#------------------------------------
+#  [koke_rock.jpg]
+#------------------------------------
+WALLSET
+	TEXTYPE = 2
+	POS = -313 -270 0
+	ROT = 0 270 0
+	BLOCK = 16 7
+	SIZE = 40 40
+	MOVE = 0.000200 0.000500
+END_WALLSET
+WALLSET
+	TEXTYPE = 2
+	POS = 153 -270 0
+	ROT = 0 90 0
+	BLOCK = 16 7
+	SIZE = 40 40
+END_WALLSET
+WALLSET
+	TEXTYPE = 2
+	POS = 153 -270 0
+	ROT = 0 90 0
+	BLOCK = 16 7
+	SIZE = 40 40
+END_WALLSET
+
+
+#-----------------------------------------------------------------------------
+# モデルの配置情報
+#-----------------------------------------------------------------------------
+
+#------------------------------------
+#  [bridge.x]
+#------------------------------------
+MODELSET
+	TYPE = 0
+	POS = -200 0 60
+	ROT = 0 0 0
+END_MODELSET
+MODELSET
+	TYPE = 0
+	POS = 40 0 60
+	ROT = 0 0 0
+END_MODELSET
+
+#------------------------------------
+#  [river_stone.x]
+#------------------------------------
+MODELSET
+	TYPE = 1
+	POS = 50 -200 0
+	ROT = 0 0 0
+END_MODELSET
+MODELSET
+	TYPE = 1
+	POS = -205 -200 5
+	ROT = 0 180 0
+END_MODELSET
+
+#------------------------------------
+#  [stone1.x]
+#------------------------------------
+MODELSET
+	TYPE = 2
+	POS = 120 -200 0
+	ROT = 0 0 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = 110 -208 250
+	ROT = 0 20 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = 112 -200 -180
+	ROT = 0 260 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = 121 -207 -230
+	ROT = 0 150 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = 130 -200 -300
+	ROT = 0 150 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = 60 -203 160
+	ROT = 0 292 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = 60 -208 300
+	ROT = 0 245 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = 40 -200 -50
+	ROT = 0 245 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = 150 -210 -135
+	ROT = 0 30 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = 100 -205 -280
+	ROT = 0 120 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = 130 -200 130
+	ROT = 0 120 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = -210 -208 0
+	ROT = 0 0 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = -221 -205 -230
+	ROT = 0 100 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = -240 -204 -300
+	ROT = 0 140 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = -281 -210 160
+	ROT = 0 292 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = -240 -200 300
+	ROT = 0 25 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = -298 -201 200
+	ROT = 0 280 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = -250 -206 -170
+	ROT = 0 12 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = -210 -205 -100
+	ROT = 0 25 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = -200 -201 230
+	ROT = 0 27 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = -220 -202 50
+	ROT = 0 150 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = -212 -200 150
+	ROT = 0 60 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = -280 -204 -130
+	ROT = 0 40 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = -170 -200 0
+	ROT = 0 0 0
+END_MODELSET
+MODELSET
+	TYPE = 2
+	POS = 7 -200 -120
+	ROT = 0 30 0
+END_MODELSET
+
+#------------------------------------
+#  [stone2.x]
+#------------------------------------
+MODELSET
+	TYPE = 3
+	POS = 135 -210 70
+	ROT = 0 120 0
+END_MODELSET
+MODELSET
+	TYPE = 3
+	POS = 120 -201 187
+	ROT = 0 70 0
+END_MODELSET
+MODELSET
+	TYPE = 3
+	POS = 110 -200 -82
+	ROT = 0 210 0
+END_MODELSET
+MODELSET
+	TYPE = 3
+	POS = 60 -212 100
+	ROT = 0 245 0
+END_MODELSET
+MODELSET
+	TYPE = 3
+	POS = 135 -210 300
+	ROT = 0 0 0
+END_MODELSET
+MODELSET
+	TYPE = 3
+	POS = 100 -207 40
+	ROT = 0 50 0
+END_MODELSET
+MODELSET
+	TYPE = 3
+	POS = 80 -204 -135
+	ROT = 0 0 0
+END_MODELSET
+MODELSET
+	TYPE = 3
+	POS = 100 -203 -200
+	ROT = 0 60 0
+END_MODELSET
+MODELSET
+	TYPE = 3
+	POS = 60 -206 -280
+	ROT = 0 10 0
+END_MODELSET
+MODELSET
+	TYPE = 3
+	POS = -285 -201 70
+	ROT = 0 120 0
+END_MODELSET
+MODELSET
+	TYPE = 3
+	POS = -215 -205 100
+	ROT = 0 72 0
+END_MODELSET
+MODELSET
+	TYPE = 3
+	POS = -221 -204 300
+	ROT = 0 30 0
+END_MODELSET
+MODELSET
+	TYPE = 3
+	POS = -270 -200 40
+	ROT = 0 120 0
+END_MODELSET
+MODELSET
+	TYPE = 3
+	POS = -230 -203 -60
+	ROT = 0 30 0
+END_MODELSET
+MODELSET
+	TYPE = 3
+	POS = -294 -210 -250
+	ROT = 0 80 0
+END_MODELSET
+MODELSET
+	TYPE = 3
+	POS = -290 -204 -20
+	ROT = 0 309 0
+END_MODELSET
+MODELSET
+	TYPE = 3
+	POS = -300 -206 -100
+	ROT = 0 196 0
+END_MODELSET
+MODELSET
+	TYPE = 3
+	POS = -260 -200 250
+	ROT = 0 50 0
+END_MODELSET
+MODELSET
+	TYPE = 3
+	POS = -210 -201 -160
+	ROT = 0 10 0
+END_MODELSET
+MODELSET
+	TYPE = 3
+	POS = -140 -200 150
+	ROT = 0 80 0
+END_MODELSET
+MODELSET
+	TYPE = 3
+	POS = 10 -200 223
+	ROT = 0 240 0
+END_MODELSET
+MODELSET
+	TYPE = 3
+	POS = 12 -205 -100
+	ROT = 0 60 0
+END_MODELSET
+
+#------------------------------------
+#  [wall_tree.x]
+#------------------------------------
+MODELSET
+	TYPE = 4
+	POS = 150 -150 0
+	ROT = 0 90 0
+END_MODELSET
+MODELSET
+	TYPE = 4
+	POS = 150 -210 -150
+	ROT = 0 100 0
+END_MODELSET
+MODELSET
+	TYPE = 4
+	POS = 150 -180 230
+	ROT = 0 80 0
+END_MODELSET
+MODELSET
+	TYPE = 4
+	POS = -311 -140 0
+	ROT = 0 270 0
+END_MODELSET
+MODELSET
+	TYPE = 4
+	POS = -311 -210 -100
+	ROT = 0 280 0
+END_MODELSET
+MODELSET
+	TYPE = 4
+	POS = -311 -180 230
+	ROT = 0 280 0
+END_MODELSET
+
+#------------------------------------
+#  [tree.x]
+#------------------------------------
+MODELSET
+	TYPE = 5
+	POS = -430 9 50
+	ROT = 0 80 0
+END_MODELSET
+MODELSET
+	TYPE = 5
+	POS = -545 9 110
+	ROT = 0 30 0
+END_MODELSET
+MODELSET
+	TYPE = 5
+	POS = -370 9 -60
+	ROT = 0 15 0
+END_MODELSET
+MODELSET
+	TYPE = 5
+	POS = -450 9 -12
+	ROT = 0 150 0
+END_MODELSET
+MODELSET
+	TYPE = 5
+	POS = -630 9 70
+	ROT = 0 120 0
+END_MODELSET
+MODELSET
+	TYPE = 5
+	POS = -560 9 -20
+	ROT = 0 32 0
+END_MODELSET
+MODELSET
+	TYPE = 5
+	POS = -660 9 -280
+	ROT = 0 120 0
+END_MODELSET
+MODELSET
+	TYPE = 5
+	POS = -500 9 230
+	ROT = 0 80 0
+END_MODELSET
+MODELSET
+	TYPE = 5
+	POS = -650 9 230
+	ROT = 0 0 0
+END_MODELSET
+MODELSET
+	TYPE = 5
+	POS = -480 9 280
+	ROT = 0 0 0
+END_MODELSET
+MODELSET
+	TYPE = 5
+	POS = 310 9 200
+	ROT = 0 67 0
+END_MODELSET
+MODELSET
+	TYPE = 5
+	POS = 230 9 -50
+	ROT = 0 67 0
+END_MODELSET
+MODELSET
+	TYPE = 5
+	POS = 360 9 -130
+	ROT = 0 67 0
+END_MODELSET
+MODELSET
+	TYPE = 5
+	POS = 280 9 -260
+	ROT = 0 67 0
+END_MODELSET
+MODELSET
+	TYPE = 5
+	POS = 470 9 -60
+	ROT = 0 67 0
+END_MODELSET
+MODELSET
+	TYPE = 5
+	POS = 430 9 -250
+	ROT = 0 67 0
+END_MODELSET
+
+#------------------------------------
+#  [tree_2.x]
+#------------------------------------
+MODELSET
+	TYPE = 6
+	POS = -350 9 0
+	ROT = 0 0 0
+END_MODELSET
+MODELSET
+	TYPE = 6
+	POS = -450 9 180
+	ROT = 0 120 0
+END_MODELSET
+MODELSET
+	TYPE = 6
+	POS = -680 9 123
+	ROT = 0 89 0
+END_MODELSET
+MODELSET
+	TYPE = 6
+	POS = -400 9 -5
+	ROT = 0 40 0
+END_MODELSET
+MODELSET
+	TYPE = 6
+	POS = -590 9 40
+	ROT = 0 183 0
+END_MODELSET
+MODELSET
+	TYPE = 6
+	POS = -630 9 -30
+	ROT = 0 120 0
+END_MODELSET
+MODELSET
+	TYPE = 6
+	POS = -350 9 -280
+	ROT = 0 12 0
+END_MODELSET
+MODELSET
+	TYPE = 6
+	POS = -550 9 200
+	ROT = 0 0 0
+END_MODELSET
+MODELSET
+	TYPE = 6
+	POS = -600 9 230
+	ROT = 0 0 0
+END_MODELSET
+MODELSET
+	TYPE = 6
+	POS = -420 9 255
+	ROT = 0 0 0
+END_MODELSET
+
+#------------------------------------
+#  [tree_small.x]
+#------------------------------------
+MODELSET
+	TYPE = 7
+	POS = -610 9 120
+	ROT = 0 0 0
+END_MODELSET
+MODELSET
+	TYPE = 7
+	POS = -503 9 30
+	ROT = 0 60 0
+END_MODELSET
+MODELSET
+	TYPE = 7
+	POS = -670 9 30
+	ROT = 0 120 0
+END_MODELSET
+MODELSET
+	TYPE = 7
+	POS = -345 9 -200
+	ROT = 0 30 0
+END_MODELSET
+MODELSET
+	TYPE = 7
+	POS = -630 9 300
+	ROT = 0 80 0
+END_MODELSET
+MODELSET
+	TYPE = 7
+	POS = -550 9 260
+	ROT = 0 0 0
+END_MODELSET
+MODELSET
+	TYPE = 7
+	POS = 420 9 150
+	ROT = 0 5 0
+END_MODELSET
+MODELSET
+	TYPE = 7
+	POS = 500 9 280
+	ROT = 0 120 0
+END_MODELSET
+MODELSET
+	TYPE = 7
+	POS = 200 9 280
+	ROT = 0 80 0
+END_MODELSET
+
+#------------------------------------
+#  [fence.x]
+#------------------------------------
+MODELSET
+	TYPE = 8
+	POS = -315 9 279
+	ROT = 0 90 0
+END_MODELSET
+MODELSET
+	TYPE = 8
+	POS = -315 9 223
+	ROT = 0 90 0
+END_MODELSET
+MODELSET
+	TYPE = 8
+	POS = -315 9 167
+	ROT = 0 90 0
+END_MODELSET
+MODELSET
+	TYPE = 8
+	POS = -315 9 111
+	ROT = 0 90 0
+END_MODELSET
+MODELSET
+	TYPE = 8
+	POS = -315 9 9
+	ROT = 0 90 0
+END_MODELSET
+MODELSET
+	TYPE = 8
+	POS = -315 9 -47
+	ROT = 0 90 0
+END_MODELSET
+MODELSET
+	TYPE = 8
+	POS = -315 9 -103
+	ROT = 0 90 0
+END_MODELSET
+MODELSET
+	TYPE = 8
+	POS = -315 9 -159
+	ROT = 0 90 0
+END_MODELSET
+MODELSET
+	TYPE = 8
+	POS = -315 9 -215
+	ROT = 0 90 0
+END_MODELSET
+MODELSET
+	TYPE = 8
+	POS = -315 9 -271
+	ROT = 0 90 0
+END_MODELSET
+MODELSET
+	TYPE = 8
+	POS = 157 9 279
+	ROT = 0 -90 0
+END_MODELSET
+MODELSET
+	TYPE = 8
+	POS = 157 9 223
+	ROT = 0 -90 0
+END_MODELSET
+MODELSET
+	TYPE = 8
+	POS = 157 9 167
+	ROT = 0 -90 0
+END_MODELSET
+MODELSET
+	TYPE = 8
+	POS = 157 9 111
+	ROT = 0 -90 0
+END_MODELSET
+MODELSET
+	TYPE = 8
+	POS = 157 9 9
+	ROT = 0 -90 0
+END_MODELSET
+MODELSET
+	TYPE = 8
+	POS = 157 9 -47
+	ROT = 0 -90 0
+END_MODELSET
+MODELSET
+	TYPE = 8
+	POS = 157 9 -103
+	ROT = 0 -90 0
+END_MODELSET
+MODELSET
+	TYPE = 8
+	POS = 157 9 -159
+	ROT = 0 -90 0
+END_MODELSET
+MODELSET
+	TYPE = 8
+	POS = 157 9 -215
+	ROT = 0 -90 0
+END_MODELSET
+MODELSET
+	TYPE = 8
+	POS = 157 9 -271
+	ROT = 0 -90 0
+END_MODELSET
+
+#------------------------------------
+#  [stone_cycle.x]
+#------------------------------------
+MODELSET
+	TYPE = 9
+	POS = -540 9 -180
+	ROT = 0 0 0
+END_MODELSET
+
+#------------------------------------
+#  [grass.x]
+#------------------------------------
+MODELSET
+	TYPE = 10
+	POS = 300 9 -180
+	ROT = 0 0 0
+END_MODELSET
+MODELSET
+	TYPE = 10
+	POS = 430 9 -150
+	ROT = 0 15 0
+END_MODELSET
+MODELSET
+	TYPE = 10
+	POS = 400 9 -50
+	ROT = 0 60 0
+END_MODELSET
+MODELSET
+	TYPE = 10
+	POS = 320 9 -70
+	ROT = 0 130 0
+END_MODELSET
+MODELSET
+	TYPE = 10
+	POS = 235 9 -30
+	ROT = 0 30 0
+END_MODELSET
+MODELSET
+	TYPE = 10
+	POS = 220 9 -100
+	ROT = 0 169 0
+END_MODELSET
+MODELSET
+	TYPE = 10
+	POS = 215 9 -140
+	ROT = 0 78 0
+END_MODELSET
+MODELSET
+	TYPE = 10
+	POS = 222 9 -230
+	ROT = 0 30 0
+END_MODELSET
+MODELSET
+	TYPE = 10
+	POS = 400 9 -230
+	ROT = 0 10 0
+END_MODELSET
+MODELSET
+	TYPE = 10
+	POS = 500 9 -245
+	ROT = 0 10 0
+END_MODELSET
+MODELSET
+	TYPE = 10
+	POS = 300 9 120
+	ROT = 0 0 0
+END_MODELSET
+MODELSET
+	TYPE = 10
+	POS = 210 9 120
+	ROT = 0 60 0
+END_MODELSET
+MODELSET
+	TYPE = 10
+	POS = 400 9 150
+	ROT = 0 180 0
+END_MODELSET
+MODELSET
+	TYPE = 10
+	POS = 500 9 110
+	ROT = 0 45 0
+END_MODELSET
+MODELSET
+	TYPE = 10
+	POS = 320 9 200
+	ROT = 0 45 0
+END_MODELSET
+MODELSET
+	TYPE = 10
+	POS = 215 9 210
+	ROT = 0 80 0
+END_MODELSET
+MODELSET
+	TYPE = 10
+	POS = 325 9 250
+	ROT = 0 30 0
+END_MODELSET
+MODELSET
+	TYPE = 10
+	POS = 420 9 250
+	ROT = 0 60 0
+END_MODELSET
+MODELSET
+	TYPE = 10
+	POS = 490 9 230
+	ROT = 0 20 0
+END_MODELSET
+
+END_SCRIPT
