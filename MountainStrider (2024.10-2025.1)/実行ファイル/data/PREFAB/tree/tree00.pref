@@ -1,0 +1,69 @@
+{
+    "object": {
+        "0": {
+            "friction": 1.0,
+            "model": "data\\MODEL\\trees\\tree00.x",
+            "name": "model",
+            "shadow": true,
+            "tag": "",
+            "transform": {
+                "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.5,
+                    1.5,
+                    1.5
+                ]
+            },
+            "trigger": false
+        }
+    },
+    "parent": {
+        "0": -1
+    },
+    "prefab": {
+        "collision": [
+            {
+                "height": 40.099998474121094,
+                "offset": [
+                    -0.5,
+                    20.399999618530273,
+                    0.20000000298023224
+                ],
+                "radius": 2.0,
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "type": "cylinder"
+            }
+        ],
+        "friction": 1.0,
+        "mass": 120.0,
+        "name": "tree00",
+        "rigidbody": false,
+        "tag": "",
+        "transform": {
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "trigger": false
+    }
+}
