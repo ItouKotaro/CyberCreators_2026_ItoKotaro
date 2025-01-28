@@ -7,8 +7,7 @@ Name: **伊藤 小太郎** (Ito Kotaro)
 
 ### [MountainStrider (2024.10-2025.1)](MountainStrider%20(2024.10-2025.1))  
 > 自動生成で出来た地形をバイク駆け回る3Dゲームです。  
-> 言語: C++
-
+> 言語: C++&emsp;[紹介動画](https://youtu.be/3AHpyZHnHPs)
 <details>
 <summary>Click to view tree</summary>
   
@@ -23,7 +22,7 @@ Name: **伊藤 小太郎** (Ito Kotaro)
 
 ### [Digirus (2024.6-2024.9)](Digirus%20(2024.6-2024.9))  
 > ポータルの中に潜ってゴールを目指すアクションゲームです。  
-> 言語: C++
+> 言語: C++&emsp;[紹介動画](https://youtu.be/On66ouqgUPo)
 
 <details>
 <summary>Click to view tree</summary>
