@@ -47,18 +47,19 @@ void GameObject::UpdateAll()
 		}
 		catch (const std::exception&)
 		{
-			std::string errData;
-			errData = "名前: " + (*itr)->GetName() +"\n";
-			errData += "タグ: " + (*itr)->GetTag() + "\n";
-			errData += "コンポーネント一覧 -> ";
+			ofstream outputfile("error_report.txt");
+			outputfile << "名前: " + (*itr)->GetName() +"\n";
+			outputfile << "タグ: " + (*itr)->GetTag() + "\n";
+			outputfile << "コンポーネント一覧 -> ";
 
 			for (auto compItr = (*itr)->m_components.begin(); compItr != (*itr)->m_components.end(); compItr++)
 			{
-				errData += typeid(**compItr).name();
-				errData += "\n";
+				outputfile << typeid(**compItr).name();
+				outputfile << "\n";
 			}
 			
-			MessageBox(nullptr, errData.c_str(), "エラー", MB_OK);
+			// 終了
+			outputfile.close();
 		}
 	
 	}
@@ -261,7 +262,7 @@ void GameObject::DestroyDeathFlag()
 		{ // 死亡フラグがついているとき
 			GameObject* destroyObj = m_gameObjects[i];
 
-			//// ゲームオブジェクトの登録を解除する
+			// ゲームオブジェクトの登録を解除する
 			m_gameObjects.erase(m_gameObjects.begin() + i);
 
 			delete destroyObj;

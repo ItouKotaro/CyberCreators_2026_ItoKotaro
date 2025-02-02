@@ -74,7 +74,7 @@ void CVehicle::Init()
 	m_pHandle->AddComponent<CMesh>()->LoadMeshX("data\\MODEL\\MOTOR_BIKE\\handle.x");
 
 	// ‘O—Ö‚Ì¶¬
-	m_pFrontTire = new GameObject;
+	m_pFrontTire = new GameObject("FrontTire", "Vehicle");
 	m_pFrontTire->transform->Translate(0.0f, 0.0f, -12.5f);
 	m_pFrontTire->AddComponent<CCylinderCollider>(3.5f, 1.05f, D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXVECTOR3(0.0f, 0.0f, D3DX_PI * 0.5f));
 	m_pFrontTire->AddComponent<CMesh>()->LoadMeshX("data\\MODEL\\MOTOR_BIKE\\front.x");
@@ -85,7 +85,7 @@ void CVehicle::Init()
 	m_pFrontTire->GetComponent<CRigidBody>()->EnableAlwayActive();
 
 	// Œã—Ö‚Ì¶¬
-	m_pBackTire = new GameObject;
+	m_pBackTire = new GameObject("BackTire", "Vehicle");
 	m_pBackTire->transform->Translate(0.0f, 0.0f, 6.0f);
 	m_pBackTire->AddComponent<CCylinderCollider>(3.5f, 1.05f, D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXVECTOR3(0.0f, 0.0f, D3DX_PI * 0.5f));
 	m_pBackTire->AddComponent<CMesh>()->LoadMeshX("data\\MODEL\\MOTOR_BIKE\\back.x");
@@ -278,6 +278,16 @@ void CVehicle::LandingControlVehicle()
 		pBackHinge->setTargetVelocity(3, 0.0f);
 	}
 	
+	// ŒX‚«’²®
+	if (INPUT_INSTANCE->onInput("forward") || stickLY > XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE)
+	{
+		angularVelocity += {sinf(transform->GetRotY() + D3DX_PI * 0.5f) * -0.8f, 0.0f, cosf(transform->GetRotY() + D3DX_PI * 0.5f) * -0.8f};
+	}
+	if (INPUT_INSTANCE->onInput("behind") || stickLY < -XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE)
+	{
+		angularVelocity += {sinf(transform->GetRotY() + D3DX_PI * 0.5f) * 0.8f, 0.0f, cosf(transform->GetRotY() + D3DX_PI * 0.5f) * 0.8f};
+	}
+
 	// •ûŒü“]Š·
 	float fSteeringVelocity = 0.0f;
 	if (INPUT_INSTANCE->onInput("left") || stickLX < -XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE)
@@ -339,10 +349,10 @@ void CVehicle::UpdateSpeedMeter()
 {
 	// 60ƒtƒŒ[ƒ€–ˆ‚ÅKm/h‚ÉŠ·ŽZ
 	m_measureCounter++;
-	if (m_measureCounter >= 60)
+	if (m_measureCounter >= 5)
 	{
-		float fDistance = Benlib::PosDistance(transform->GetWPos(), m_measurePos);
-		m_fSpeed = fDistance / 2.0f;
+		float fDistance = Benlib::PosPlaneDistance(transform->GetWPos(), m_measurePos);
+		m_fSpeed = fDistance * 5.0f;
 		m_measureCounter = 0;
 		m_measurePos = transform->GetWPos();
 	}

@@ -251,12 +251,14 @@
     <ClCompile Include="src\scripts\environmental_type.cpp" />
     <ClCompile Include="src\scripts\event\event_manager.cpp" />
     <ClCompile Include="src\scripts\event\meteo.cpp" />
+    <ClCompile Include="src\scripts\event\strong_wind.cpp" />
     <ClCompile Include="src\scripts\event\tornado.cpp" />
     <ClCompile Include="src\scripts\gem.cpp" />
     <ClCompile Include="src\scripts\item\items.cpp" />
     <ClCompile Include="src\scripts\item\item_manager.cpp" />
     <ClCompile Include="src\scripts\item\item_slot.cpp" />
     <ClCompile Include="src\scripts\lake.cpp" />
+    <ClCompile Include="src\scripts\mine.cpp" />
     <ClCompile Include="src\scripts\pause.cpp" />
     <ClCompile Include="src\scripts\play_guide.cpp" />
     <ClCompile Include="src\scripts\ranking_system.cpp" />
@@ -265,6 +267,7 @@
     <ClCompile Include="src\scripts\result\result_data.cpp" />
     <ClCompile Include="src\scripts\result\result_terrain.cpp" />
     <ClCompile Include="src\scripts\result\result_view.cpp" />
+    <ClCompile Include="src\scripts\ring.cpp" />
     <ClCompile Include="src\scripts\road.cpp" />
     <ClCompile Include="src\scripts\shop\buy_button.cpp" />
     <ClCompile Include="src\scripts\shop\inventory.cpp" />
@@ -273,6 +276,7 @@
     <ClCompile Include="src\scripts\speedmeter_ui.cpp" />
     <ClCompile Include="src\scripts\status_ui.cpp" />
     <ClCompile Include="src\scripts\terrain.cpp" />
+    <ClCompile Include="src\scripts\terrain_type.cpp" />
     <ClCompile Include="src\scripts\trajectory.cpp" />
     <ClCompile Include="src\scripts\vehicle.cpp" />
     <ClCompile Include="src\scripts\vehicle_action.cpp" />
@@ -338,12 +342,14 @@
     <ClInclude Include="src\scripts\environmental_type.h" />
     <ClInclude Include="src\scripts\event\event_manager.h" />
     <ClInclude Include="src\scripts\event\meteo.h" />
+    <ClInclude Include="src\scripts\event\strong_wind.h" />
     <ClInclude Include="src\scripts\event\tornado.h" />
     <ClInclude Include="src\scripts\gem.h" />
     <ClInclude Include="src\scripts\item\items.h" />
     <ClInclude Include="src\scripts\item\item_manager.h" />
     <ClInclude Include="src\scripts\item\item_slot.h" />
     <ClInclude Include="src\scripts\lake.h" />
+    <ClInclude Include="src\scripts\mine.h" />
     <ClInclude Include="src\scripts\pause.h" />
     <ClInclude Include="src\scripts\play_guide.h" />
     <ClInclude Include="src\scripts\ranking_system.h" />
@@ -352,6 +358,7 @@
     <ClInclude Include="src\scripts\result\result_data.h" />
     <ClInclude Include="src\scripts\result\result_terrain.h" />
     <ClInclude Include="src\scripts\result\result_view.h" />
+    <ClInclude Include="src\scripts\ring.h" />
     <ClInclude Include="src\scripts\road.h" />
     <ClInclude Include="src\scripts\shop\buy_button.h" />
     <ClInclude Include="src\scripts\shop\inventory.h" />
@@ -360,6 +367,7 @@
     <ClInclude Include="src\scripts\speedmeter_ui.h" />
     <ClInclude Include="src\scripts\status_ui.h" />
     <ClInclude Include="src\scripts\terrain.h" />
+    <ClInclude Include="src\scripts\terrain_type.h" />
     <ClInclude Include="src\scripts\trajectory.h" />
     <ClInclude Include="src\scripts\vehicle.h" />
     <ClInclude Include="src\scripts\vehicle_action.h" />

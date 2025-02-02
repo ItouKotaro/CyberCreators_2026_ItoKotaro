@@ -8,6 +8,9 @@
 #include "scripts/destructible.h"
 #include "component/2d/text.h"
 
+#include "scripts/mine.h"
+#include "scripts/ring.h"
+
 const float DecorationManager::CHUNK_DIVISION = (Terrain::TERRAIN_SIZE * Terrain::TERRAIN_SCALE) / (float)MAX_CHUNK;
 const int DecorationManager::DESTROY_LIMIT = 60;
 
@@ -18,8 +21,8 @@ void DecorationManager::Init(Terrain* terrain)
 {
 	m_terrain = terrain;
 
-	m_oldChunkX = 0;
-	m_oldChunkY = 0;
+	m_oldChunkX = -1;
+	m_oldChunkY = -1;
 }
 
 //=============================================================
@@ -213,6 +216,21 @@ void DecorationManager::RemoveData(DecorationData* data)
 	}
 
 	assert("not found data");
+}
+
+//=============================================================
+// [DecorationManager] データの削除
+//=============================================================
+void DecorationManager::RemoveData(GameObject* gameObject)
+{
+	for (auto itr = m_decoObjects.begin(); itr != m_decoObjects.end(); itr++)
+	{
+		if ((*itr)->gameObject == gameObject)
+		{
+			RemoveData((*itr)->decoDeta);
+			break;
+		}
+	}
 }
 
 //=============================================================
@@ -480,10 +498,22 @@ void DecorationManager::ActiveData(DecorationData* decoData)
 		targetDecoObj->decoType = decoData->type;
 		targetDecoObj->gameObject = GameObject::LoadPrefab(decoData->type->path, decoData->transform);
 		targetDecoObj->destroyCounter = DESTROY_LIMIT;
+
+		// 破壊可能オブジェクトのとき
 		if (decoData->type->isDestructible)
 		{
 			targetDecoObj->gameObject->AddComponent<Destructible>(this)->SetDecoData(decoData);
 			targetDecoObj->gameObject->AddComponent<AudioSource>();
+		}
+
+		// 特殊タグの場合
+		if (targetDecoObj->gameObject->GetTag() == "MINE")
+		{ // 地雷
+			targetDecoObj->gameObject->AddComponent<LandMine>();
+		}
+		else if (targetDecoObj->gameObject->GetTag() == "RING")
+		{ // リング
+			targetDecoObj->gameObject->AddComponent<PointRing>();
 		}
 
 		m_decoObjects.push_back(targetDecoObj);

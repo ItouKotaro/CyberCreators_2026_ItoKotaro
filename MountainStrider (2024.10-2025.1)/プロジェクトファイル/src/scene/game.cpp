@@ -45,6 +45,9 @@ void CGameScene::Init()
 	m_actionPoint = 0;
 	m_pause = nullptr;
 
+	// 乱数のシード設定
+	srand((unsigned int)clock());
+
 	// ポーズ
 	m_pause = new Pause();
 	m_pause->Init();
@@ -64,12 +67,6 @@ void CGameScene::Init()
 		CMesh::SetCamera(m_camera->GetComponent<CCamera>());
 	}
 
-	// ライトを作成
-	{
-		GameObject* pLight = new GameObject("Light");
-		CD3DLight::SetDefaultD3DLight(pLight);
-	}
-
 	// 読み込む地形ファイルを決定する
 	auto terrainFiles = GetTerrainFiles();
 	if (terrainFiles.empty())
@@ -78,11 +75,12 @@ void CGameScene::Init()
 		Main::ExitApplication();
 		return;
 	}
+
+	// 取得したパスの中から1つをランダムで取得して格納する
 	auto terrainPath = terrainFiles[rand() % terrainFiles.size()];
 
 	// 地面を作成
 	{
-		srand((unsigned int)clock());
 		m_terrain = new Terrain();
 		m_terrain->SetSeed(rand());
 		m_terrain->Init();
@@ -224,6 +222,11 @@ void CGameScene::Uninit()
 //=============================================================
 void CGameScene::Update()
 {
+	if (INPUT_INSTANCE->onTrigger("@"))
+	{
+		onClear();
+	}
+
 	// ポーズ
 	if (INPUT_INSTANCE->onTrigger("p") || INPUT_INSTANCE->onTrigger("esc") || INPUT_INSTANCE->onTrigger("p:start"))
 	{
@@ -367,8 +370,9 @@ void CGameScene::SpawnBike()
 	m_bike->GetComponent<CVehicle>()->SetStatusUI(m_statusUI->GetComponent<CStatusUI>());
 
 	// スピードメーターUIを生成
-	//m_speedmeterUI = new GameObject("SpeedMeterUI", "UI");
-	//m_speedmeterUI->AddComponent<SpeedMeterUI>(m_bike->GetComponent<CVehicle>());
+	m_speedmeterUI = new GameObject("SpeedMeterUI", "UI");
+	m_speedmeterUI->transform->SetPos(CRenderer::SCREEN_WIDTH - 380.0f, CRenderer::SCREEN_HEIGHT - 350.0f);
+	m_speedmeterUI->AddComponent<SpeedMeterUI>(m_bike->GetComponent<CVehicle>());
 }
 
 //=============================================================
@@ -378,12 +382,14 @@ void CGameScene::ClearCondition()
 {
 	D3DXVECTOR3 vehiclePos = m_bike->transform->GetWPos();
 
+	// 地形の端に行ったとき
 	if (vehiclePos.x <= -Terrain::TERRAIN_DISTANCE_HALF + EXTENSION_DISTANCE || vehiclePos.x >= Terrain::TERRAIN_DISTANCE_HALF - EXTENSION_DISTANCE ||
 		vehiclePos.z <= -Terrain::TERRAIN_DISTANCE_HALF + EXTENSION_DISTANCE || vehiclePos.z >= Terrain::TERRAIN_DISTANCE_HALF - EXTENSION_DISTANCE)
 	{
 		onClear();
 	}
 
+	// 最低高度よりも下に行ったとき
 	if (vehiclePos.y < m_terrain->GetMinHeight() - 5.0f)
 	{
 		onClear();
@@ -399,6 +405,9 @@ void CGameScene::onGameOver()
 	{ // 1回のみの処理
 		// ステータスUIを非表示にする
 		m_statusUI->GetComponent<CStatusUI>()->SetVisible(false);
+
+		// スピードメーターを非表示にする
+		m_speedmeterUI->SetActive(false);
 
 		// アイテムスロットを非表示にする
 		m_itemSlot->SetActive(false);
@@ -452,6 +461,9 @@ void CGameScene::onClear()
 	{ // 1回のみの処理
 		// ステータスUIを非表示にする
 		m_statusUI->GetComponent<CStatusUI>()->SetVisible(false);
+
+		// スピードメーターを非表示にする
+		m_speedmeterUI->SetActive(false);
 
 		// アイテムスロットを非表示にする
 		m_itemSlot->SetActive(false);

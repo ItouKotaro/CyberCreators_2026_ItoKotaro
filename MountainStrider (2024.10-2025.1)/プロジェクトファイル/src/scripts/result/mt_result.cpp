@@ -209,8 +209,8 @@ void ClearResult::Init()
 
 	// 次の山へ or 終了
 	{
+		// 次へ進むボタンを生成する
 		m_nextButton = new GameObject("NextMountain");
-		page->AddObject(0, m_nextButton);
 		m_nextButton->transform->SetSize(500.0f, 140.0f);
 		m_nextButton->transform->SetPos((CRenderer::SCREEN_WIDTH / 2 - 250.0f) + 400.0f, 850.0f);
 		m_nextButton->AddComponent<ButtonUI>();
@@ -222,19 +222,23 @@ void ClearResult::Init()
 			// 次のページへ
 			page->SetPage(1); 
 			});
+		page->AddObject(0, m_nextButton);
 
+		// 次へ進むボタンのテキストを生成する
 		GameObject* nextButtonText = new GameObject();
 		nextButtonText->SetParent(m_nextButton);
-		page->AddObject(0, nextButtonText);
 		nextButtonText->transform->SetPos(250.0f, 35.0f);
 		nextButtonText->AddComponent<CText>();
 		nextButtonText->GetComponent<CText>()->SetAlign(CText::CENTER);
+		nextButtonText->GetComponent<CText>()->SetFontSize(80);
 		nextButtonText->GetComponent<CText>()->SetText("<color=0,0,0>次へ進む");
 		nextButtonText->GetComponent<CText>()->SetFont("07鉄瓶ゴシック");
+		page->AddObject(0, nextButtonText);
 	}
 
 	// 終了
 	{
+		// 終了ボタンを生成する
 		m_endButton = new GameObject("EndMountain");
 		page->AddObject(0, m_endButton);
 		m_endButton->transform->SetSize(500.0f, 140.0f);
@@ -252,6 +256,7 @@ void ClearResult::Init()
 			FinalResult(true);
 			});
 
+		// 終了ボタンのテキストを生成する
 		GameObject* endButtonText = new GameObject();
 		endButtonText->SetParent(m_endButton);
 		page->AddObject(0, endButtonText);
@@ -262,6 +267,14 @@ void ClearResult::Init()
 		endButtonText->GetComponent<CText>()->SetText("<color=0,0,0>諦める");
 		endButtonText->GetComponent<CText>()->SetFont("07鉄瓶ゴシック");
 	}
+
+	// 説明UIを作成する
+	m_descriptionUI = new GameObject();
+	m_descriptionUI->transform->SetSize(DESC_SIZE);
+	m_descriptionUI->AddComponent<CPolygon>();
+	m_descriptionUI->GetComponent<CPolygon>()->SetTexture(DESC_END_TEXTURE);
+	m_descriptionUI->SetVisible(false);
+	page->AddObject(0, m_descriptionUI);
 
 	// ページのリセット
 	page->AllHideObjects();
@@ -317,6 +330,27 @@ void ClearResult::Update()
 	// ショップを更新する
 	if (m_page->GetComponent<Pages>()->GetPage() == 1)
 		m_shopManager->Update();
+
+	// 説明UIの更新
+	if (m_endButton->GetComponent<ButtonUI>()->GetOnCursor())
+	{ // 終了ボタンにカーソルがあるとき
+		m_descriptionUI->GetComponent<CPolygon>()->SetTexture(DESC_END_TEXTURE);
+		m_descriptionUI->transform->SetPos(m_endButton->transform->GetWPos() + D3DXVECTOR3(-60.0f, -280.0f, 0.0f));
+		m_descriptionUI->GetComponent<CPolygon>()->Update();
+		m_descriptionUI->SetVisible(true);
+	}
+	else if (m_nextButton->GetComponent<ButtonUI>()->GetOnCursor())
+	{ // 次の山ボタンにカーソルがあるとき
+		m_descriptionUI->GetComponent<CPolygon>()->SetTexture(DESC_NEXT_TEXTURE);
+		m_descriptionUI->transform->SetPos(m_nextButton->transform->GetWPos() + D3DXVECTOR3(-60.0f, -280.0f, 0.0f));
+		m_descriptionUI->GetComponent<CPolygon>()->Update();
+		m_descriptionUI->SetVisible(true);
+	}
+	else
+	{ // どのボタンにもカーソルがないとき
+		// 非表示
+		m_descriptionUI->SetVisible(false);
+	}
 }
 
 //=============================================================
@@ -475,6 +509,7 @@ void GameOverResult::Init()
 
 	// 最終結果
 	{
+		// 最終結果ボタンを生成する
 		GameObject* pFinalResultButton = new GameObject("FinalResult");
 		pFinalResultButton->transform->SetSize(500.0f, 140.0f);
 		pFinalResultButton->transform->SetPos((CRenderer::SCREEN_WIDTH / 2 - 250.0f), 850.0f);
@@ -486,10 +521,12 @@ void GameOverResult::Init()
 			});
 		page->AddObject(0, pFinalResultButton);
 
+		// 最終結果ボタンのテキストを生成する
 		GameObject* pFinalResultButtonText = new GameObject();
 		pFinalResultButtonText->SetParent(pFinalResultButton);
 		pFinalResultButtonText->transform->SetPos(250.0f, 35.0f);
 		pFinalResultButtonText->AddComponent<CText>();
+		pFinalResultButtonText->GetComponent<CText>()->SetFontSize(80);
 		pFinalResultButtonText->GetComponent<CText>()->SetAlign(CText::CENTER);
 		pFinalResultButtonText->GetComponent<CText>()->SetText("<color=0,0,0>最終結果へ");
 		pFinalResultButtonText->GetComponent<CText>()->SetFont("07鉄瓶ゴシック");
@@ -607,7 +644,7 @@ void ResultBase::FinalResult(bool isSuccess)
 	for (auto itr = m_results.begin(); itr != m_results.end(); itr++)
 	{
 		totalMileage += (*itr).mileage;
-		totalFuel += (*itr).fuel * 0.6f;
+		totalFuel += (*itr).fuel;
 	}
 	fuelConsumption = totalMileage / totalFuel;
 	char fuelTextPara[64];
@@ -624,6 +661,12 @@ void ResultBase::FinalResult(bool isSuccess)
 		}
 	}
 	score += CLEAR_POINT * static_cast<int>(isSuccess ? m_results.size() : m_results.size() - 1);
+
+	// 成功していた場合は終了ポイントを加算する
+	if (isSuccess)
+	{
+		score += END_POINT;
+	}
 
 	// 失敗していた時は半分にする
 	if (!isSuccess)
@@ -653,17 +696,17 @@ void ResultBase::FinalResult(bool isSuccess)
 	// 平均タイム
 	RANK timeRank;
 	if (time < 60) timeRank = RANK_S;
-	else if (time < 100) timeRank = RANK_A;
-	else if (time < 180) timeRank = RANK_B;
+	else if (time < 120) timeRank = RANK_A;
+	else if (time < 240) timeRank = RANK_B;
 	else timeRank = RANK_C;
 	if (timeRank == 0) timeRank = RANK_C;
 
 	// アクション
 	RANK actionRank = RANK_S;
 	int actionScore = GetAverageAction();
-	if (actionScore >= 3000) actionRank = RANK_S;
-	else if (actionScore >= 1800) actionRank = RANK_A;
-	else if (actionScore >= 600) actionRank = RANK_B;
+	if (actionScore >= 1200) actionRank = RANK_S;
+	else if (actionScore >= 600) actionRank = RANK_A;
+	else if (actionScore >= 100) actionRank = RANK_B;
 	else actionRank = RANK_C;
 
 	// 燃費
