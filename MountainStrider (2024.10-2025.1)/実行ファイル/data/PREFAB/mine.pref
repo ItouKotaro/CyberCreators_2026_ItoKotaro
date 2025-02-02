@@ -2,7 +2,7 @@
     "object": {
         "0": {
             "friction": 1.0,
-            "model": "data\\MODEL\\jump_stand.x",
+            "model": "data\\MODEL\\land_mine.x",
             "name": "model",
             "shadow": true,
             "tag": "",
@@ -18,9 +18,9 @@
                     0.0
                 ],
                 "scale": [
-                    3.5,
-                    2.700000047683716,
-                    3.0
+                    1.0,
+                    1.0,
+                    1.0
                 ]
             },
             "trigger": false
@@ -32,47 +32,26 @@
     "prefab": {
         "collision": [
             {
+                "height": 5.0,
                 "offset": [
                     0.0,
-                    5.199999809265137,
-                    -31.799999237060547
+                    0.699999988079071,
+                    0.0
                 ],
+                "radius": 9.300000190734863,
                 "rotation": [
-                    -0.6000000238418579,
+                    0.0,
                     0.0,
                     0.0
                 ],
-                "size": [
-                    108.5999984741211,
-                    78.69999694824219,
-                    131.1999969482422
-                ],
-                "type": "box"
-            },
-            {
-                "offset": [
-                    0.0,
-                    5.199999809265137,
-                    31.799999237060547
-                ],
-                "rotation": [
-                    0.6000000238418579,
-                    0.0,
-                    0.0
-                ],
-                "size": [
-                    108.5999984741211,
-                    78.69999694824219,
-                    131.1999969482422
-                ],
-                "type": "box"
+                "type": "cylinder"
             }
         ],
-        "friction": 10.0,
+        "friction": 1.0,
         "mass": 10.0,
-        "name": "JumpStand",
+        "name": "mine",
         "rigidbody": false,
-        "tag": "",
+        "tag": "MINE",
         "transform": {
             "position": [
                 0.0,
@@ -85,6 +64,6 @@
                 0.0
             ]
         },
-        "trigger": false
+        "trigger": true
     }
 }
