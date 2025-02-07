@@ -247,6 +247,7 @@
     <ClCompile Include="src\scripts\camera_move.cpp" />
     <ClCompile Include="src\scripts\decoration.cpp" />
     <ClCompile Include="src\scripts\destructible.cpp" />
+    <ClCompile Include="src\scripts\direction_arrow.cpp" />
     <ClCompile Include="src\scripts\environmental.cpp" />
     <ClCompile Include="src\scripts\environmental_type.cpp" />
     <ClCompile Include="src\scripts\event\event_manager.cpp" />
@@ -259,6 +260,8 @@
     <ClCompile Include="src\scripts\item\item_slot.cpp" />
     <ClCompile Include="src\scripts\lake.cpp" />
     <ClCompile Include="src\scripts\mine.cpp" />
+    <ClCompile Include="src\scripts\mode\mode_manager.cpp" />
+    <ClCompile Include="src\scripts\mode\terminal.cpp" />
     <ClCompile Include="src\scripts\pause.cpp" />
     <ClCompile Include="src\scripts\play_guide.cpp" />
     <ClCompile Include="src\scripts\ranking_system.cpp" />
@@ -338,6 +341,7 @@
     <ClInclude Include="src\scripts\camera_move.h" />
     <ClInclude Include="src\scripts\decoration.h" />
     <ClInclude Include="src\scripts\destructible.h" />
+    <ClInclude Include="src\scripts\direction_arrow.h" />
     <ClInclude Include="src\scripts\environmental.h" />
     <ClInclude Include="src\scripts\environmental_type.h" />
     <ClInclude Include="src\scripts\event\event_manager.h" />
@@ -350,6 +354,8 @@
     <ClInclude Include="src\scripts\item\item_slot.h" />
     <ClInclude Include="src\scripts\lake.h" />
     <ClInclude Include="src\scripts\mine.h" />
+    <ClInclude Include="src\scripts\mode\mode_manager.h" />
+    <ClInclude Include="src\scripts\mode\terminal.h" />
     <ClInclude Include="src\scripts\pause.h" />
     <ClInclude Include="src\scripts\play_guide.h" />
     <ClInclude Include="src\scripts\ranking_system.h" />
