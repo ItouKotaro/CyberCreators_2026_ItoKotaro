@@ -1,5 +1,5 @@
 ## 製作者
-School: 吉田学園情報ビジネス専門学校 ゲームクリエイター学科2年  
+School: 専門学校北海道サイバークリエイターズ大学校 ゲームクリエイター学科3年  
 Name: **伊藤 小太郎** (Ito Kotaro)  
 <br>
 
@@ -7,7 +7,7 @@ Name: **伊藤 小太郎** (Ito Kotaro)
 
 ### [MountainStrider (2024.10-2025.1)](MountainStrider%20(2024.10-2025.1))  
 > 自動生成で出来た地形をバイク駆け回る3Dゲームです。  
-> 言語: C++&emsp;[紹介動画](https://www.youtube.com/watch?v=fjQZt71h3Us)
+> 言語: C++&emsp;[紹介動画](https://youtu.be/4fmo6_PqYuI?feature=shared)
 <details>
 <summary>Click to view tree</summary>
   
