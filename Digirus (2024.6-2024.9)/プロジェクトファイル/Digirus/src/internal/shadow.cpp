@@ -208,7 +208,7 @@ void CShadow::DrawShadow(CCamera* pCamera)
         }
 
         // シャドウボリュームの色を適用する（描画タイプがSHADOWVOLUMEのみ機能する）
-        D3DXVECTOR4 volumeColor = { pLight->GetVolumeColor() };
+        D3DXVECTOR4 volumeColor = { pLight->GetVolumeColor().r, pLight->GetVolumeColor().g, pLight->GetVolumeColor().b, pLight->GetVolumeColor().a };
         m_pShadowVolume->SetVector("g_vShadowColor", &volumeColor);
 
         // モデルリストを取得する
@@ -299,7 +299,7 @@ void CShadow::RenderMesh(CCamera* pCamera, bool bRenderLight)
             {
                 // ライトの取得
                 CLight* pLight = pLightList[i];
-                D3DXVECTOR4 lightCol = { pLight->GetColor() };
+                D3DXVECTOR4 lightCol = { pLight->GetColor().r, pLight->GetColor().g, pLight->GetColor().b, pLight->GetColor().a };
                 lightCol *= pLight->GetIntensity();
 
                 mWorldView = pLight->transform->GetMatrix() * pCamera->GetViewMatrix();
@@ -308,11 +308,7 @@ void CShadow::RenderMesh(CCamera* pCamera, bool bRenderLight)
                 m_pShadowVolume->SetMatrix("g_mWorldViewProjection", &mWorldViewProjection);
                 m_pShadowVolume->SetVector("g_vAmbient", &lightCol);
 
-                // The effect interface queues up the changes and performs them 
-                // with the CommitChanges call. You do not need to call CommitChanges if 
-                // you are not setting any parameters between the BeginPass and EndPass.
                 m_pShadowVolume->CommitChanges();
-
                 m_pLightMesh->DrawSubset(0);
             }
             m_pShadowVolume->EndPass();

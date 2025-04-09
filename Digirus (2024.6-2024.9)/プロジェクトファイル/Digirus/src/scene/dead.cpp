@@ -39,37 +39,37 @@ void CDeadScene::Init()
 	m_pUpBG->SetPriority(18);
 	m_pUpBG->AddComponent<CPolygon>();
 	m_pUpBG->GetComponent<CPolygon>()->SetColor(D3DCOLOR_RGBA(128, 25, 25, 255));
-	m_pUpBG->transform->SetSize(CRenderer::SCREEN_WIDTH, CRenderer::SCREEN_HEIGHT / 2);
-	m_pUpBG->transform->SetPos(0.0f, -CRenderer::SCREEN_HEIGHT / 2);
+	m_pUpBG->transform->SetSize(static_cast<float>(CRenderer::SCREEN_WIDTH), static_cast<float>(CRenderer::SCREEN_HEIGHT / 2));
+	m_pUpBG->transform->SetPos(0.0f, static_cast<float>(-CRenderer::SCREEN_HEIGHT / 2));
 
 	// 下の背景を作成する
 	m_pDownBG = new GameObject;
 	m_pDownBG->SetPriority(18);
 	m_pDownBG->AddComponent<CPolygon>();
 	m_pDownBG->GetComponent<CPolygon>()->SetColor(D3DCOLOR_RGBA(128, 25, 25, 255));
-	m_pDownBG->transform->SetSize(CRenderer::SCREEN_WIDTH, CRenderer::SCREEN_HEIGHT / 2);
-	m_pDownBG->transform->SetPos(0.0f, CRenderer::SCREEN_HEIGHT);
+	m_pDownBG->transform->SetSize(static_cast<float>(CRenderer::SCREEN_WIDTH), static_cast<float>(CRenderer::SCREEN_HEIGHT / 2));
+	m_pDownBG->transform->SetPos(0.0f, static_cast<float>(CRenderer::SCREEN_HEIGHT));
 
 	// 左の背景を作成する
 	m_pLeftBG = new GameObject;
 	m_pLeftBG->SetPriority(18);
 	m_pLeftBG->AddComponent<CPolygon>();
 	m_pLeftBG->GetComponent<CPolygon>()->SetColor(D3DCOLOR_RGBA(128, 25, 25, 255));
-	m_pLeftBG->transform->SetSize(CRenderer::SCREEN_WIDTH / 2, CRenderer::SCREEN_HEIGHT);
-	m_pLeftBG->transform->SetPos(-CRenderer::SCREEN_WIDTH / 2, 0.0f);
+	m_pLeftBG->transform->SetSize(static_cast<float>(CRenderer::SCREEN_WIDTH / 2), static_cast<float>(CRenderer::SCREEN_HEIGHT));
+	m_pLeftBG->transform->SetPos(static_cast<float>(-CRenderer::SCREEN_WIDTH / 2), 0.0f);
 
 	// 右の背景を作成する
 	m_pRightBG = new GameObject;
 	m_pRightBG->SetPriority(18);
 	m_pRightBG->AddComponent<CPolygon>();
 	m_pRightBG->GetComponent<CPolygon>()->SetColor(D3DCOLOR_RGBA(128, 25, 25, 255));
-	m_pRightBG->transform->SetSize(CRenderer::SCREEN_WIDTH / 2, CRenderer::SCREEN_HEIGHT);
-	m_pRightBG->transform->SetPos(CRenderer::SCREEN_WIDTH, 0.0f);
+	m_pRightBG->transform->SetSize(static_cast<float>(CRenderer::SCREEN_WIDTH / 2), static_cast<float>(CRenderer::SCREEN_HEIGHT));
+	m_pRightBG->transform->SetPos(static_cast<float>(CRenderer::SCREEN_WIDTH), 0.0f);
 
 	// 死亡テキスト
 	GameObject* pDeadText = new GameObject;
 	pDeadText->SetPriority(19);
-	pDeadText->transform->SetPos(CRenderer::SCREEN_WIDTH / 2, 230.0f, 0.0f);
+	pDeadText->transform->SetPos(static_cast<float>(CRenderer::SCREEN_WIDTH / 2), 230.0f, 0.0f);
 	pDeadText->AddComponent<CTypingText>();
 	pDeadText->GetComponent<CTypingText>()->SetTypingSpeed(10);
 	pDeadText->GetComponent<CTypingText>()->SetFontSize(180);
@@ -145,9 +145,9 @@ void CDeadScene::Update()
 
 	// 上下左右を閉める
 	m_pUpBG->transform->Translate((D3DXVECTOR3(0.0f, 0.0f, 0.0f) - m_pUpBG->transform->GetWPos()) * 0.06f);
-	m_pDownBG->transform->Translate((D3DXVECTOR3(0.0f, CRenderer::SCREEN_HEIGHT/2, 0.0f) - m_pDownBG->transform->GetWPos()) * 0.06f);
+	m_pDownBG->transform->Translate((D3DXVECTOR3(0.0f, static_cast<float>(CRenderer::SCREEN_HEIGHT/2), 0.0f) - m_pDownBG->transform->GetWPos()) * 0.06f);
 	m_pLeftBG->transform->Translate((D3DXVECTOR3(0.0f, 0.0f, 0.0f) - m_pLeftBG->transform->GetWPos()) * 0.06f);
-	m_pRightBG->transform->Translate((D3DXVECTOR3(CRenderer::SCREEN_WIDTH / 2, 0.0f, 0.0f) - m_pRightBG->transform->GetWPos()) * 0.06f);
+	m_pRightBG->transform->Translate((D3DXVECTOR3(static_cast<float>(CRenderer::SCREEN_WIDTH / 2), 0.0f, 0.0f) - m_pRightBG->transform->GetWPos()) * 0.06f);
 
 
 	// リトライ
@@ -195,7 +195,7 @@ void CDeadScene::Update()
 		}
 
 		// アイコンを回転させる
-		D3DXVECTOR2 shakeHomeIcon = D3DXVECTOR2(rand() % 6 - 3, rand() % 6 - 3);
+		D3DXVECTOR2 shakeHomeIcon = D3DXVECTOR2(static_cast<float>(rand() % 6 - 3), static_cast<float>(rand() % 6 - 3));
 		m_pHomeIcon->transform->SetPos(95.0f + shakeHomeIcon.x, 80.0f + shakeHomeIcon.y);
 
 		// 色を変える

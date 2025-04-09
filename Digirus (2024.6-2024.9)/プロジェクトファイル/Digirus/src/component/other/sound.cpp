@@ -189,6 +189,8 @@ CSound::STATE CSound::GetState()
 	case AL_STOPPED:
 		return STATE::STOPPED;
 	}
+
+	return STATE::STOPPED;
 }
 
 //=============================================================

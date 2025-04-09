@@ -198,7 +198,7 @@ void CPhysics::Uninit()
 void CPhysics::Update()
 {
 	// •¨—ƒ[ƒ‹ƒh‚ði‚ß‚é
-	m_dynamicsWorld->stepSimulation(1. / 60., 1);
+	m_dynamicsWorld->stepSimulation(static_cast<btScalar>(1. / 60.), 1);
 	m_dynamicsWorld->debugDrawWorld();
 
 

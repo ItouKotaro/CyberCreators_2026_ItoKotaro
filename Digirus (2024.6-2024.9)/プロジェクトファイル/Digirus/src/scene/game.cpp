@@ -121,7 +121,7 @@ void CGameScene::Init()
 	// フェードの作成
 	m_pFade = new GameObject();
 	m_pFade->SetPriority(10);
-	m_pFade->transform->SetSize(CRenderer::SCREEN_WIDTH, CRenderer::SCREEN_HEIGHT);
+	m_pFade->transform->SetSize(static_cast<float>(CRenderer::SCREEN_WIDTH), static_cast<float>(CRenderer::SCREEN_HEIGHT));
 	m_pFade->AddComponent<CPolygon>()->SetColor(D3DXCOLOR(0.0f, 0.0f, 0.0f, 1.0f));
 
 	// ポーズの初期化
@@ -168,7 +168,7 @@ void CGameScene::Init()
 	m_nTitleTimeCounter = 130;
 	m_fTitleAlpha = 1.0f;
 	m_pTitleName = new GameObject;
-	m_pTitleName->transform->SetPos(CRenderer::SCREEN_WIDTH / 2, 300.0f);
+	m_pTitleName->transform->SetPos(static_cast<float>(CRenderer::SCREEN_WIDTH / 2), 300.0f);
 	m_pTitleName->AddComponent<CText>();
 	m_pTitleName->GetComponent<CText>()->SetAlign(CText::ALIGN::CENTER);
 	m_pTitleName->GetComponent<CText>()->SetFont("07鉄瓶ゴシック");
@@ -186,7 +186,7 @@ void CGameScene::Init()
 	m_nCurrentTime = 0;
 	m_bIsGoal = false;
 	m_pTimeUI = new GameObject;
-	m_pTimeUI->transform->SetPos(CRenderer::SCREEN_WIDTH / 2, 600);
+	m_pTimeUI->transform->SetPos(static_cast<float>(CRenderer::SCREEN_WIDTH / 2), 600);
 	m_pTimeUI->AddComponent<CText>();
 	m_pTimeUI->GetComponent<CText>()->SetFont("ベストテン-CRT");
 	m_pTimeUI->GetComponent<CText>()->SetFontSize(120);
@@ -215,9 +215,6 @@ void CGameScene::Update()
 	// ゲームオーバー
 	if (m_bGameOver)
 		return;
-
-	// カーソルを中央に移動する処理
-	CenterCosor();
 
 	// ポーズ中は以降の処理を無視する
 	if (m_pPause->GetComponent<CPause>()->GetIsPause())
@@ -543,7 +540,7 @@ void CGameScene::InitResult()
 	// スコア
 	m_pScoreText = new GameObject;
 	m_pScoreText->SetName("ScoreText");
-	m_pScoreText->transform->SetPos(CRenderer::SCREEN_WIDTH / 2, 350.0f);
+	m_pScoreText->transform->SetPos(static_cast<float>(CRenderer::SCREEN_WIDTH / 2), 350.0f);
 	m_pScoreText->SetVisible(false);
 	m_pScoreText->AddComponent<CText>();
 	m_pScoreText->GetComponent<CText>()->SetFont("ベストテン-CRT");
@@ -557,7 +554,7 @@ void CGameScene::InitResult()
 	GameObject* pBarObj = new GameObject;
 	pBarObj->SetVisible(false);
 	pBarObj->transform->SetPos(RESULT_BAR_SPACE / 2, 550);
-	pBarObj->transform->SetSize(CRenderer::SCREEN_WIDTH - RESULT_BAR_SPACE, 2);
+	pBarObj->transform->SetSize(static_cast<float>(CRenderer::SCREEN_WIDTH - RESULT_BAR_SPACE), 2);
 	pBarObj->AddComponent<CPolygon>()->SetColor(D3DCOLOR_RGBA(100, 100, 100, 100));
 	pBarObj->SetTag("result");
 	pRenderObject->AddObject(pBarObj);

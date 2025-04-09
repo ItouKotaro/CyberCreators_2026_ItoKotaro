@@ -50,9 +50,9 @@ void CBreakEffect::Init()
 	pRigid->GetCollision()->SetMass(15.0f);
 
 	// ”ò‚Î‚·
-	D3DXVECTOR3 impulseDir = D3DXVECTOR3(rand() % 20 - 10, rand() % 20 - 10, rand() % 20 - 10);
+	D3DXVECTOR3 impulseDir = D3DXVECTOR3(static_cast<float>(rand() % 20 - 10), static_cast<float>(rand() % 20 - 10), static_cast<float>(rand() % 20 - 10));
 	D3DXVec3Normalize(&impulseDir, &impulseDir);
-	impulseDir *= rand() % 40;
+	impulseDir *= static_cast<float>(rand() % 40);
 	pRigid->GetRigidBody()->applyCentralImpulse(btVector3(impulseDir.x, impulseDir.y, impulseDir.z));
 }
 

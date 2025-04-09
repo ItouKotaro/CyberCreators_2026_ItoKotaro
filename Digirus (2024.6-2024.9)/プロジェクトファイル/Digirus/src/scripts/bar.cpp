@@ -135,7 +135,7 @@ void CProgressBar::Update()
 	m_pBgObj->transform->SetSize(m_fBarLength, m_fBarBold);
 
 	// –„‚ß‚é”iŠ„‡j
-	int nFillNum = m_nNumBar * m_fBarProgress;
+	int nFillNum = static_cast<int>(m_nNumBar * m_fBarProgress);
 
 	for (int i = 0; i < m_pBars.size(); i++)
 	{

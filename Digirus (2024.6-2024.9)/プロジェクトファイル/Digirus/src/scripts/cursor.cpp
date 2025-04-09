@@ -59,8 +59,9 @@ void CCursor::Update()
 		currentPos.y != centerPoint.y)
 	{ // 前回とカーソル位置が異なるとき
 		m_cursorDevice = CursorDevice::MOUSE;
-		m_cursorPoint.x +=  currentPos.x - centerPoint.x;
-		m_cursorPoint.y +=  currentPos.y - centerPoint.y;
+		CManager::CursorPos cursorPos = GetManager()->GetCursorClientPos();
+		m_cursorPoint.x = cursorPos.x;
+		m_cursorPoint.y = cursorPos.y;
 	}
 
 	// コントローラー判定
@@ -69,8 +70,11 @@ void CCursor::Update()
 	if (controlStickLx != 0 || controlStickLy != 0)
 	{ // コントローラーで動かしているとき
 		m_cursorDevice = CursorDevice::CONTROLLER;
-		m_cursorPoint.x += controlStickLx * 0.0004f;
-		m_cursorPoint.y += controlStickLy * -0.0004f;
+		m_cursorPoint.x += static_cast<LONG>(controlStickLx * 0.0004f);
+		m_cursorPoint.y += static_cast<LONG>(controlStickLy * -0.0004f);
+
+		// マウス位置を保存する
+		SetCursorPos(centerPoint.x, centerPoint.y);
 	}
 
 	// カーソル位置に制限つける
@@ -84,10 +88,7 @@ void CCursor::Update()
 		m_cursorPoint.y = CRenderer::SCREEN_HEIGHT;
 
 	// カーソルの表示位置を変更する
-	m_pCursorObj->transform->SetPos(m_cursorPoint.x, m_cursorPoint.y);
-
-	// マウス位置を保存する
-	SetCursorPos(centerPoint.x, centerPoint.y);
+	m_pCursorObj->transform->SetPos(static_cast<float>(m_cursorPoint.x), static_cast<float>(m_cursorPoint.y));
 }
 
 //=============================================================

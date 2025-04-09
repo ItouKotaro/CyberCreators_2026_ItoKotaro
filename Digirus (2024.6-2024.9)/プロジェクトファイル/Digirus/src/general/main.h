@@ -15,4 +15,8 @@
 // プロトタイプ宣言
 LRESULT CALLBACK WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
+class CManager;
+CManager* GetManager();
+
+
 #endif

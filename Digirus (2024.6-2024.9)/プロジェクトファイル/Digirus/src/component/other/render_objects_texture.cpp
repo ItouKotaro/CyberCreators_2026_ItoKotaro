@@ -60,6 +60,8 @@ HRESULT CRenderObjectsTexture::Create(const int& nW, const int& nH)
 	{
 		return E_FAIL;
 	}
+
+	return S_OK;
 }
 
 //=============================================================

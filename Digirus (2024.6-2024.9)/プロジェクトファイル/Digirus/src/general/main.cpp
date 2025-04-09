@@ -232,3 +232,11 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 
 	return DefWindowProc(hWnd, uMsg, wParam, lParam); //既定の処理を返す
 }
+
+//=============================================================
+// マネージャーを取得する
+//=============================================================
+CManager* GetManager()
+{
+	return g_pManager;
+}

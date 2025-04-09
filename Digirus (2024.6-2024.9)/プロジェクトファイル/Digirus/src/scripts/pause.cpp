@@ -33,15 +33,7 @@ void CPause::Init()
 	m_pBG->SetPriority(20);
 	m_pBG->AddComponent<CPolygon>();
 	m_pBG->GetComponent<CPolygon>()->SetColor(D3DXCOLOR(0, 0, 0, 0.9f));
-	m_pBG->transform->SetSize(CRenderer::SCREEN_WIDTH, CRenderer::SCREEN_HEIGHT);
-
-	// ポーズテキスト背景
-	//m_pPauseTextBG = new GameObject;
-	//m_pPauseTextBG->SetPriority(20);
-	//m_pPauseTextBG->AddComponent<CPolygon>();
-	//m_pPauseTextBG->GetComponent<CPolygon>()->SetColor(D3DCOLOR_RGBA(150, 150, 150, 255));
-	//m_pPauseTextBG->transform->SetSize(500, 140);
-	//m_pPauseTextBG->transform->SetPos((CRenderer::SCREEN_WIDTH - 500) / 2, 170);
+	m_pBG->transform->SetSize(static_cast<float>(CRenderer::SCREEN_WIDTH), static_cast<float>(CRenderer::SCREEN_HEIGHT));
 
 	// ポーズテキスト
 	m_pPauseText = new GameObject;
@@ -50,7 +42,7 @@ void CPause::Init()
 	m_pPauseText->GetComponent<CText>()->SetAlign(CText::ALIGN::CENTER);
 	m_pPauseText->GetComponent<CText>()->SetFont("ベストテン-CRT");
 	m_pPauseText->GetComponent<CText>()->SetText("<size=160>ポーズ");
-	m_pPauseText->transform->SetPos(CRenderer::SCREEN_WIDTH/2, 180.0f);
+	m_pPauseText->transform->SetPos(static_cast<float>(CRenderer::SCREEN_WIDTH/2), 180.0f);
 
 	// 続ける
 	m_pContinue = new GameObject;
@@ -58,7 +50,7 @@ void CPause::Init()
 	m_pContinue->AddComponent<CPolygon>();
 	m_pContinue->GetComponent<CPolygon>()->SetTexture("data\\TEXTURE\\PAUSE\\continue.png");
 	m_pContinue->transform->SetSize(BUTTON_WIDTH, BUTTON_HEIGHT);
-	m_pContinue->transform->SetPos((CRenderer::SCREEN_WIDTH - BUTTON_WIDTH) / 2, 400);
+	m_pContinue->transform->SetPos(static_cast<float>((CRenderer::SCREEN_WIDTH - BUTTON_WIDTH) / 2), 400.0f);
 
 	// リトライ
 	m_pRetry = new GameObject;
@@ -66,7 +58,7 @@ void CPause::Init()
 	m_pRetry->AddComponent<CPolygon>();
 	m_pRetry->GetComponent<CPolygon>()->SetTexture("data\\TEXTURE\\PAUSE\\retry.png");
 	m_pRetry->transform->SetSize(BUTTON_WIDTH, BUTTON_HEIGHT);
-	m_pRetry->transform->SetPos((CRenderer::SCREEN_WIDTH - BUTTON_WIDTH) / 2, 400 + (BUTTON_HEIGHT + BUTTON_SPACE) * 1);
+	m_pRetry->transform->SetPos(static_cast<float>((CRenderer::SCREEN_WIDTH - BUTTON_WIDTH) / 2), 400.0f + static_cast<float>((BUTTON_HEIGHT + BUTTON_SPACE) * 1));
 
 	// ホームへ戻るボタン
 	m_pBackHome = new GameObject;
@@ -74,7 +66,7 @@ void CPause::Init()
 	m_pBackHome->AddComponent<CPolygon>();
 	m_pBackHome->GetComponent<CPolygon>()->SetTexture("data\\TEXTURE\\PAUSE\\home.png");
 	m_pBackHome->transform->SetSize(BUTTON_WIDTH, BUTTON_HEIGHT);
-	m_pBackHome->transform->SetPos((CRenderer::SCREEN_WIDTH - BUTTON_WIDTH) / 2, 400 + (BUTTON_HEIGHT + BUTTON_SPACE) * 2);
+	m_pBackHome->transform->SetPos(static_cast<float>((CRenderer::SCREEN_WIDTH - BUTTON_WIDTH) / 2), static_cast<float>(400.0f + (BUTTON_HEIGHT + BUTTON_SPACE) * 2));
 
 	// 非表示
 	SetShow(m_bIsPause);

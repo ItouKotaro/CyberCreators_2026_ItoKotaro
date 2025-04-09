@@ -21,6 +21,7 @@ int CManager::m_nFPS = 0;
 int CManager::m_nMouseWheel = 0;
 float CManager::m_fDeltaTime = 0.0f;
 bool CManager::m_bPause = false;
+bool CManager::m_bShowCursor = true;
 
 //=============================================================
 // [CManager] コンストラクタ
@@ -106,20 +107,20 @@ void CManager::Uninit()
 		m_pPhysics = nullptr;
 	}
 
-	// オーディオマネージャーを破棄する
-	if (m_pAudioManager != nullptr)
-	{
-		m_pAudioManager->Uninit();
-		delete m_pAudioManager;
-		m_pAudioManager = nullptr;
-	}
-
 	// データ管理を破棄する
 	if (m_pDataManager != nullptr)
 	{
 		m_pDataManager->Uninit();
 		delete m_pDataManager;
 		m_pDataManager = nullptr;
+	}
+
+	// オーディオマネージャーを破棄する
+	if (m_pAudioManager != nullptr)
+	{
+		m_pAudioManager->Uninit();
+		delete m_pAudioManager;
+		m_pAudioManager = nullptr;
 	}
 }
 
@@ -145,16 +146,6 @@ void CManager::Update()
 
 	// シーンの更新
 	CSceneManager::GetInstance()->Update();
-
-	// カーソルの非表示
-	if (GetActiveWindow() == CManager::GetHWND())
-	{
-		ShowCursor(FALSE); // 非表示
-	}
-	else
-	{
-		ShowCursor(TRUE); // 表示
-	}
 }
 
 //=============================================================
@@ -167,4 +158,76 @@ void CManager::Draw()
 
 	// シーンの描画
 	CSceneManager::GetInstance()->Draw();
+}
+
+//=============================================================
+// [CManager] カーソルの表示
+//=============================================================
+void CManager::SetShowCursor(const bool& show)
+{
+	if (m_bShowCursor != show)
+	{
+		ShowCursor(show ? TRUE : FALSE);
+		m_bShowCursor = show;
+	}
+}
+
+//=============================================================
+// [CManager] カーソル位置を取得する
+//=============================================================
+CManager::CursorPos CManager::GetCursorClientPos()
+{
+	POINT points;
+	GetCursorPos(&points);
+
+	// スクリーン上で見た左上の座標を取得する
+	POINT startPos;
+	startPos.x = 0;
+	startPos.y = 0;
+	ClientToScreen(m_hwnd, &startPos);
+
+	CursorPos cPos;
+	cPos.x = static_cast<float>(points.x - startPos.x);
+	cPos.y = static_cast<float>(points.y - startPos.y);
+
+
+	D3DXVECTOR2 rect = GetWindowSize();
+	cPos.x *= static_cast<float>(CRenderer::SCREEN_WIDTH / (float)rect.x);
+	cPos.y *= static_cast<float>(CRenderer::SCREEN_HEIGHT / (float)rect.y);
+	return cPos;
+}
+
+//=============================================================
+// [CManager] カーソル位置を設定する
+//=============================================================
+void CManager::SetCursorClientPos(float x, float y)
+{
+	CursorPos cPos;
+	cPos.x = x;
+	cPos.y = y;
+
+	// スクリーン上で見た左上の座標を取得する
+	POINT startPos;
+	startPos.x = 0;
+	startPos.y = 0;
+	ClientToScreen(m_hwnd, &startPos);
+
+	D3DXVECTOR2 rect = GetWindowSize();
+	cPos.x *= static_cast<float>(rect.x / (float)CRenderer::SCREEN_WIDTH);
+	cPos.y *= static_cast<float>(rect.y / (float)CRenderer::SCREEN_HEIGHT);
+
+	cPos.x += startPos.x;
+	cPos.y += startPos.y;
+
+	SetCursorPos(static_cast<int>(cPos.x), static_cast<int>(cPos.y));
+}
+
+//=============================================================
+// [CManager] ウィンドウサイズ
+//=============================================================
+D3DXVECTOR2 CManager::GetWindowSize()
+{
+	RECT rect;
+	GetWindowRect(GetManager()->GetHWND(), &rect);
+	return D3DXVECTOR2(static_cast<float>(rect.right - rect.left), static_cast<float>(rect.bottom - rect.top));
 }

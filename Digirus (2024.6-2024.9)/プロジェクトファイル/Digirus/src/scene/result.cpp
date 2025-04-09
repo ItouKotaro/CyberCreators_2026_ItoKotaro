@@ -55,7 +55,7 @@ void CResultScene::Draw()
 void CResult::Init()
 {
 	m_pBGObj = new GameObject;
-	m_pBGObj->transform->SetSize(CRenderer::SCREEN_WIDTH, CRenderer::SCREEN_HEIGHT);
+	m_pBGObj->transform->SetSize(static_cast<float>(CRenderer::SCREEN_WIDTH), static_cast<float>(CRenderer::SCREEN_HEIGHT));
 	m_pBGObj->AddComponent<CPolygon>();
 	m_pBGObj->GetComponent<CPolygon>()->SetColor(D3DCOLOR_RGBA(255, 255, 255, 255));
 }

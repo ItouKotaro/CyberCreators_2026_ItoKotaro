@@ -52,7 +52,7 @@ float DegreeToRadian(const int& nDegree)
 
 int RadianToDegree(const float& fRadian)
 {
-	return fRadian * 180.0f / (float)D3DX_PI;
+	return static_cast<int>(fRadian * 180.0f / (float)D3DX_PI);
 }
 
 D3DXVECTOR3 QuaternionToEuler(D3DXQUATERNION q)

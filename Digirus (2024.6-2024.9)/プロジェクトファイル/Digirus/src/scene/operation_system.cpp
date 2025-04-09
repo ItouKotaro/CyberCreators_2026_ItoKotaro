@@ -63,11 +63,12 @@ void COperationSystem::Init()
 	m_pCursor = new CCursor;
 	m_pCursor->Init();
 	m_pCursor->SetPriority(16);
+	GetManager()->SetShowCursor(false);
 
 	// 背景
 	GameObject* pBG = new GameObject();
 	pBG->SetPriority(2);
-	pBG->transform->SetSize(CRenderer::SCREEN_WIDTH, CRenderer::SCREEN_HEIGHT);
+	pBG->transform->SetSize(static_cast<float>(CRenderer::SCREEN_WIDTH), static_cast<float>(CRenderer::SCREEN_HEIGHT));
 	pBG->AddComponent<CPolygon>()->SetColor(D3DCOLOR_RGBA(0, 0, 0, 255));
 
 	// ロゴ
@@ -89,15 +90,15 @@ void COperationSystem::Init()
 	// ガイド背景
 	GameObject* pGuideBG = new GameObject;
 	pGuideBG->SetPriority(10);
-	pGuideBG->transform->SetSize(CRenderer::SCREEN_WIDTH - TABBAR_WIDTH, GUIDE_HEIGHT);
-	pGuideBG->transform->SetPos(TABBAR_WIDTH + 2.0f, CRenderer::SCREEN_HEIGHT - GUIDE_HEIGHT);
+	pGuideBG->transform->SetSize(static_cast<float>(CRenderer::SCREEN_WIDTH - TABBAR_WIDTH), static_cast<float>(GUIDE_HEIGHT));
+	pGuideBG->transform->SetPos(static_cast<float>(TABBAR_WIDTH + 2.0f), static_cast<float>(CRenderer::SCREEN_HEIGHT - GUIDE_HEIGHT));
 	pGuideBG->AddComponent<CPolygon>()->SetColor(D3DXCOLOR(0.1f, 0.1f, 0.1f, 1.0f));
 
 	// ガイド表示
 	m_pGuide = new GameObject;
 	m_pGuide->SetPriority(11);
 	m_pGuide->transform->SetSize(GUIDE_WIDTH, GUIDE_HEIGHT);
-	m_pGuide->transform->SetPos(CRenderer::SCREEN_WIDTH - GUIDE_WIDTH, CRenderer::SCREEN_HEIGHT - GUIDE_HEIGHT - 5.0f);
+	m_pGuide->transform->SetPos(static_cast<float>(CRenderer::SCREEN_WIDTH - GUIDE_WIDTH), static_cast<float>(CRenderer::SCREEN_HEIGHT - GUIDE_HEIGHT - 5.0f));
 	m_pGuide->AddComponent<CPolygon>();
 
 	// 選択
@@ -117,13 +118,13 @@ void COperationSystem::Init()
 	// タブ背景
 	GameObject* pTagBGObj = new GameObject;
 	pTagBGObj->SetPriority(4);
-	pTagBGObj->transform->SetSize(TABBAR_WIDTH, CRenderer::SCREEN_HEIGHT);
+	pTagBGObj->transform->SetSize(static_cast<float>(TABBAR_WIDTH), static_cast<float>(CRenderer::SCREEN_HEIGHT));
 	pTagBGObj->AddComponent<CPolygon>()->SetColor(D3DCOLOR_RGBA(16, 23, 22, 255));
 
 	// タブとの仕切り
 	GameObject* pPartition = new GameObject;
 	pPartition->transform->SetPos(TABBAR_WIDTH, 0.0f);
-	pPartition->transform->SetSize(2.0f, CRenderer::SCREEN_HEIGHT);
+	pPartition->transform->SetSize(2.0f, static_cast<float>(CRenderer::SCREEN_HEIGHT));
 	CPolygon* pPartitionPoly = pPartition->AddComponent<CPolygon>();
 	pPartitionPoly->SetColor(D3DCOLOR_RGBA(200, 200, 200, 255));
 
@@ -719,8 +720,8 @@ void COperationSystem::UpdatePlayTab()
 	}
 
 	// スクロール値を加味する
-	m_nScroll -= CManager::GetMouseWheel() * 0.5f;
-	m_nScroll -= INPUT_INSTANCE->GetInstance()->GetInputDevice<CGamepadDevice>()->GetState().Gamepad.sThumbRY * 0.0003f;
+	m_nScroll -= static_cast<int>(CManager::GetMouseWheel() * 0.5f);
+	m_nScroll -= static_cast<int>(INPUT_INSTANCE->GetInstance()->GetInputDevice<CGamepadDevice>()->GetState().Gamepad.sThumbRY * 0.0003f);
 	if (m_nScroll < 0 || pFileListComp.size() < 6)
 	{ // 上限
 		m_nScroll = 0;
@@ -1086,8 +1087,8 @@ void CWindowObject::Move()
 	if (GetActiveWindow()  != CManager::GetHWND())
 	{ // アクティブでないとき
 		m_pDragging = nullptr;
-		m_oldPoint.x = -1.0f;
-		m_oldPoint.y = -1.0f;
+		m_oldPoint.x = static_cast<LONG>(-1.0f);
+		m_oldPoint.y = static_cast<LONG>(-1.0f);
 		return;	// スキップ
 	}
 		
@@ -1125,7 +1126,7 @@ void CWindowObject::Move()
 	// ウィンドウを移動する
 	if (m_pDragging == this && !(m_oldPoint.x == -1.0f && m_oldPoint.y == -1.0f))
 	{
-		m_pTitleBarObj->transform->Translate(point.x - m_oldPoint.x, point.y - m_oldPoint.y, 0.0f);
+		m_pTitleBarObj->transform->Translate(static_cast<float>(point.x - m_oldPoint.x), static_cast<float>(point.y - m_oldPoint.y), 0.0f);
 	}
 
 	// 移動制限

@@ -33,7 +33,17 @@ public:
 	static const bool GetPause() { return m_bPause; }											// ポーズの取得
 	void SetMouseWheel(const int& nMouseWheel) { m_nMouseWheel = nMouseWheel; }	// マウスホイールの設定（ユーザーの使用禁止）
 	static const int GetMouseWheel() { return m_nMouseWheel; }							// マウスホイールの取得
+	void SetShowCursor(const bool& show);
 
+	struct CursorPos
+	{
+		float x;
+		float y;
+	};
+
+	CursorPos GetCursorClientPos();																		// カーソル位置の取得
+	void SetCursorClientPos(float x, float y);															// カーソル位置の設定
+	D3DXVECTOR2 GetWindowSize();																	// ウィンドウサイズの取得
 
 	static HWND GetHWND() { return m_hwnd; }													// ハンドルの取得
 	static CRenderer* GetRenderer() { return m_pRenderer; }								// レンダラーの取得
@@ -44,6 +54,7 @@ private:
 	static float m_fDeltaTime;									// デルタタイム
 	static int m_nMouseWheel;									// マウスホイール値
 	static bool m_bPause;											// ポーズ
+	static bool m_bShowCursor;								// カーソルの表示
 	static HWND m_hwnd;										// ハンドル
 	static CRenderer* m_pRenderer;							// レンダラー
 	static CPhysics* m_pPhysics;								// 物理

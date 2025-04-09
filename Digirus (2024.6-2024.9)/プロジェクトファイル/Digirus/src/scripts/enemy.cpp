@@ -134,8 +134,8 @@ void CEnemy::OnDamage()
 void CEnemy::OnDeath()
 {
 	// 敵の大きさ
-	int nHeight = 20.0f;
-	int nRange = 10.0f;
+	int nHeight = 20;
+	int nRange = 10;
 
 	// 死亡エフェクトの表示
 	for (int i = 0; i < 12; i++)
@@ -144,7 +144,7 @@ void CEnemy::OnDeath()
 
 		// 位置決定
 		pBreakEffect->transform->SetPos(transform->GetWPos());
-		pBreakEffect->transform->Translate(rand() % (nRange * 2) - nRange, rand() % nHeight, rand() % (nRange * 2) - nRange);
+		pBreakEffect->transform->Translate(static_cast<float>(rand() % (nRange * 2) - nRange), static_cast<float>(rand() % nHeight), static_cast<float>(rand() % (nRange * 2) - nRange));
 		pBreakEffect->transform->Rotate(rand() % 314 * 0.01f, rand() % 314 * 0.01f, rand() % 314 * 0.01f);
 		pBreakEffect->AddComponent<CBreakEffect>(rand() % 120 + 260, (rand() % 20 + 10)  * 0.03f);
 	}

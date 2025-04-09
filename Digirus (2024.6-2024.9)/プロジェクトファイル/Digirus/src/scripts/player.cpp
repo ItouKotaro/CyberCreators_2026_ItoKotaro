@@ -287,7 +287,7 @@ float CPlayer::GetMoveAngle()
 	}
 	else if (INPUT_INSTANCE->onPress("a"))
 	{
-		return D3DX_PI * 1.5;
+		return D3DX_PI * 1.5f;
 	}
 	else if (INPUT_INSTANCE->onPress("d"))
 	{
@@ -507,6 +507,9 @@ void CPlayer::OnDeath()
 		CCollision::GetCollision(gameObject)->GetRigidBody()->setLinearVelocity(btVector3(0.0f, 0.0f, 0.0f));
 		CCollision::GetCollision(gameObject)->GetRigidBody()->getWorldTransform().getOrigin() = btVector3(m_savePoint.x, m_savePoint.y, m_savePoint.z);
 		gameObject->transform->SetRot(0.0f, 0.0f, 0.0f);
+
+		// ライフを復活させる
+		m_nLife = DEF_LIFE;
 
 		// カメラ位置をリセットする
 		GameObject* pCamera = GameObject::Find("Camera");
