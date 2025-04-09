@@ -10,8 +10,6 @@
 #include <stdio.h>
 #include "d3dx9.h"	
 
-#define SAFE_ERASE(container, iterator) {iterator = container.erase(iterator); if(iterator == container.end()) break;}
-
 // 便利な機能を提供します
 namespace Benlib
 {
@@ -73,6 +71,15 @@ namespace Benlib
 	*/
 	D3DXQUATERNION LookAt(const D3DXVECTOR3& pos1, const D3DXVECTOR3& pos2);
 
+	/*
+	@brief 視錐台にオブジェクトがあるかを判定します
+	@param[in] matProj : プロジェクションマトリックス
+	@param[in] matView : ビューマトリックス
+	@param[in] center : オブジェクトの中心位置
+	@param[in] radius : オブジェクトの半径
+	@return 判定 (bool)
+	*/
+	bool IsObjectInFrustum(const D3DXMATRIX& matProj, const D3DXMATRIX& matView, const D3DXVECTOR3& center, const float& radius);
 
 	/*
 	@brief 整数型のランダム値を生成します
@@ -132,6 +139,38 @@ namespace Benlib
 	@param[in] cSplit : 新しい区切り文字
 	*/
 	void ReplacePathSplit(char* FilePath, const char& cSplit);
+
+	//@brief 範囲
+	template<class T = float>
+	class Range
+	{
+	public:
+		Range() {}
+
+		//@param vMin: 最小値
+		//@param vMax: 最大値
+		Range(const T& vMin, const T& vMax)
+		{
+			min = vMin;
+			max = vMax;
+		}
+
+		T min;	// 最小値
+		T max;	// 最大値
+
+		//@brief 最小値と最大値を比べて、正しく並べ替える
+		void Sort()
+		{
+			if (min > max)
+			{
+				T temp = min;
+				min = max;
+				max = temp;
+			}
+		}
+	};
 }
+
+using namespace Benlib;
 
 #endif

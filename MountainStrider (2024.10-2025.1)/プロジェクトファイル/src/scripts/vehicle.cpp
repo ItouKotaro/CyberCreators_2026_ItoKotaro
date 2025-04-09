@@ -24,7 +24,7 @@ const float CVehicle::MIN_ENGINEFORCE_VALUE = 1.0f;
 const float CVehicle::MAX_ENGINEFORCE = 150000.0f;
 const float CVehicle::MAX_STEERING = 15000.0f;
 const float CVehicle::MAX_FUEL = 3000.0f;
-const float CVehicle::MAX_ENDURANCE = 300.0f;
+const float CVehicle::MAX_ENDURANCE = 200.0f;
 const float CVehicle::FLYING_DISTANCE = 30.0f;
 const float CVehicle::GROUND_DISTANCE = 5.0f;
 const int CVehicle::VIBRATION_VALUE = 10000;
@@ -43,7 +43,7 @@ void CVehicle::Init()
 	m_measurePos = transform->GetWPos();
 	m_pStatusUI = nullptr;
 	m_fuelConsumption = 0.0f;
-	m_limitField = CCollision::GetCollision(GameObject::Find("LimitField"));
+	m_limitField = nullptr;
 
 	// プレイヤーを生成する
 	m_pPlayer = GameObject::LoadPrefab("data\\PREFAB\\player.pref");
@@ -168,12 +168,6 @@ void CVehicle::Update()
 
 	// 地面との距離を更新する
 	UpdateGroundDistance();
-
-	// ゲームオーバー処理
-	if (m_fuel <= 0.0f)
-	{ // 燃料が無くなったとき
-		static_cast<CGameScene*>(CSceneManager::GetInstance()->GetCurrentScene()->pScene)->onGameOver();
-	}
 }
 
 //=============================================================
@@ -196,13 +190,6 @@ void CVehicle::AddDamage(const float& value)
 
 	// 耐久値を減らす
 	m_endurance -= value;
-
-	// 耐久値が無くなったときの処理
-	if (m_endurance <= 0)
-	{
-		// ゲームオーバー処理
-		static_cast<CGameScene*>(CSceneManager::GetInstance()->GetCurrentScene()->pScene)->onGameOver();
-	}
 }
 
 //=============================================================
@@ -380,9 +367,19 @@ void CVehicle::UpdateStatusUI()
 //=============================================================
 void CVehicle::UpdateGroundDistance()
 {
+	// 地形を取得する
+	auto terrain = static_cast<CGameScene*>(CSceneManager::GetInstance()->GetScene("game")->pScene)->GetTerrain();
+	float distanceHalf = (terrain->GetTerrainSize() * terrain->GetTerrainScale()) / 2.0f;
+
 	// 地面との距離を計測する
 	D3DXVECTOR3 frontPos = m_pFrontTire->transform->GetWPos();
 	D3DXVECTOR3 backPos = m_pBackTire->transform->GetWPos();
+
+	// 制限フィールドが見つかっていないときは探す
+	if (m_limitField == nullptr)
+	{
+		m_limitField = CCollision::GetCollision(GameObject::Find("LimitField"));
+	}
 
 	btVector3 Start;
 	btVector3 End;
@@ -408,10 +405,10 @@ void CVehicle::UpdateGroundDistance()
 			}
 
 			// もし地中に埋まっていた場合
-			if (RayCallback.m_collisionObject == m_limitField->GetGhostObject())
+			if (m_limitField != nullptr && RayCallback.m_collisionObject == m_limitField->GetGhostObject())
 			{
-				if (fabsf(transform->GetWPos().x) < Terrain::TERRAIN_DISTANCE_HALF - Terrain::TERRAIN_SCALE &&
-					fabsf(transform->GetWPos().z) < Terrain::TERRAIN_DISTANCE_HALF - Terrain::TERRAIN_SCALE)
+				if (fabsf(transform->GetWPos().x) < distanceHalf - terrain->GetTerrainScale() &&
+					fabsf(transform->GetWPos().z) < distanceHalf - terrain->GetTerrainScale())
 				{
 					SetPos({ transform->GetWPos().x, transform->GetWPos().y + 15.0f, transform->GetWPos().z });
 				}

@@ -245,6 +245,7 @@
     <ClCompile Include="src\scene\start_scene.cpp" />
     <ClCompile Include="src\scene\title.cpp" />
     <ClCompile Include="src\scripts\camera_move.cpp" />
+    <ClCompile Include="src\scripts\damage_effect.cpp" />
     <ClCompile Include="src\scripts\decoration.cpp" />
     <ClCompile Include="src\scripts\destructible.cpp" />
     <ClCompile Include="src\scripts\direction_arrow.cpp" />
@@ -255,11 +256,13 @@
     <ClCompile Include="src\scripts\event\strong_wind.cpp" />
     <ClCompile Include="src\scripts\event\tornado.cpp" />
     <ClCompile Include="src\scripts\gem.cpp" />
+    <ClCompile Include="src\scripts\gem_popup.cpp" />
     <ClCompile Include="src\scripts\item\items.cpp" />
     <ClCompile Include="src\scripts\item\item_manager.cpp" />
     <ClCompile Include="src\scripts\item\item_slot.cpp" />
     <ClCompile Include="src\scripts\lake.cpp" />
     <ClCompile Include="src\scripts\mine.cpp" />
+    <ClCompile Include="src\scripts\mode\area.cpp" />
     <ClCompile Include="src\scripts\mode\mode_manager.cpp" />
     <ClCompile Include="src\scripts\mode\terminal.cpp" />
     <ClCompile Include="src\scripts\pause.cpp" />
@@ -339,6 +342,7 @@
     <ClInclude Include="src\scene\start_scene.h" />
     <ClInclude Include="src\scene\title.h" />
     <ClInclude Include="src\scripts\camera_move.h" />
+    <ClInclude Include="src\scripts\damage_effect.h" />
     <ClInclude Include="src\scripts\decoration.h" />
     <ClInclude Include="src\scripts\destructible.h" />
     <ClInclude Include="src\scripts\direction_arrow.h" />
@@ -349,11 +353,13 @@
     <ClInclude Include="src\scripts\event\strong_wind.h" />
     <ClInclude Include="src\scripts\event\tornado.h" />
     <ClInclude Include="src\scripts\gem.h" />
+    <ClInclude Include="src\scripts\gem_popup.h" />
     <ClInclude Include="src\scripts\item\items.h" />
     <ClInclude Include="src\scripts\item\item_manager.h" />
     <ClInclude Include="src\scripts\item\item_slot.h" />
     <ClInclude Include="src\scripts\lake.h" />
     <ClInclude Include="src\scripts\mine.h" />
+    <ClInclude Include="src\scripts\mode\area.h" />
     <ClInclude Include="src\scripts\mode\mode_manager.h" />
     <ClInclude Include="src\scripts\mode\terminal.h" />
     <ClInclude Include="src\scripts\pause.h" />

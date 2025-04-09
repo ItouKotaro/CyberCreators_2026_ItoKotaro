@@ -75,6 +75,33 @@ D3DXQUATERNION Benlib::LookAt(const D3DXVECTOR3& pos1, const D3DXVECTOR3& pos2)
 	return q;
 }
 
+bool Benlib::IsObjectInFrustum(const D3DXMATRIX& matProj, const D3DXMATRIX& matView, const D3DXVECTOR3& center, const float& radius)
+{
+	D3DXMATRIX matViewProj;
+	D3DXMatrixIdentity(&matViewProj);
+	D3DXMatrixMultiply(&matViewProj, &matView, &matProj);
+
+	// éãêçë‰ÇÃïΩñ Çíäèo
+	D3DXPLANE planes[6];
+	planes[0] = D3DXPLANE(matViewProj._14 + matViewProj._11, matViewProj._24 + matViewProj._21, matViewProj._34 + matViewProj._31, matViewProj._44 + matViewProj._41); // ç∂
+	planes[1] = D3DXPLANE(matViewProj._14 - matViewProj._11, matViewProj._24 - matViewProj._21, matViewProj._34 - matViewProj._31, matViewProj._44 - matViewProj._41); // âE
+	planes[2] = D3DXPLANE(matViewProj._14 - matViewProj._12, matViewProj._24 - matViewProj._22, matViewProj._34 - matViewProj._32, matViewProj._44 - matViewProj._42); // è„
+	planes[3] = D3DXPLANE(matViewProj._14 + matViewProj._12, matViewProj._24 + matViewProj._22, matViewProj._34 + matViewProj._32, matViewProj._44 + matViewProj._42); // â∫
+	planes[4] = D3DXPLANE(matViewProj._13, matViewProj._23, matViewProj._33, matViewProj._43); // ãﬂ
+	planes[5] = D3DXPLANE(matViewProj._14 - matViewProj._13, matViewProj._24 - matViewProj._23, matViewProj._34 - matViewProj._33, matViewProj._44 - matViewProj._43); // âì
+
+	// îªíËÇ∑ÇÈ
+	for (int i = 0; i < 6; i++)
+	{
+		float distance = D3DXPlaneDotCoord(&planes[i], &center);
+		if (distance < -radius)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
 int Benlib::RandomInt(const int& min, const int& max)
 {
 	return rand() % (abs(max - min) + 1) + min;

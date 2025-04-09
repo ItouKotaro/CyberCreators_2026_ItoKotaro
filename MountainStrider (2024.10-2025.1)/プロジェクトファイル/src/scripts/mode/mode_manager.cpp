@@ -5,6 +5,7 @@
 //
 //=============================================================
 #include "mode_manager.h"
+#include "manager.h"
 
 //=============================================================
 // [ModeManager] 初期化
@@ -25,7 +26,13 @@ void ModeManager::Uninit()
 	if (m_mode != nullptr)
 	{
 		m_mode->Uninit();
-		m_mode->ResetState();
+	}
+
+	if (m_result != nullptr)
+	{
+		m_result->Uninit();
+		delete m_result;
+		m_result = nullptr;
 	}
 }
 
@@ -67,4 +74,35 @@ void ModeManager::SetMode(ModeTemplate* mode)
 
 	// 新しいモードを設定する
 	m_mode = mode;
+}
+
+//=============================================================
+// [ModeManager] リザルトを設定する
+//=============================================================
+void ModeManager::SetResult(ResultBase* result)
+{
+	// リザルトがあるときは削除する
+	if (m_result != nullptr)
+	{
+		m_result->Uninit();
+		delete m_result;
+		m_result = nullptr;
+	}
+
+	// リザルトデータを計算する
+	auto gameScene = static_cast<CGameScene*>(CSceneManager::GetInstance()->GetScene("game")->pScene);
+	gameScene->CalcResultData();
+
+	// リザルトを設定する
+	m_result = result;
+	m_result->Init();
+}
+
+//=============================================================
+// [ModeTemplate] コンストラクタ
+//=============================================================
+ModeTemplate::ModeTemplate()
+{
+	// ゲームシーンを取得する
+	m_game = static_cast<CGameScene*>(CSceneManager::GetInstance()->GetScene("game")->pScene);
 }
